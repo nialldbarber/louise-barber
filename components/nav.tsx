@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Link from 'next/link';
 
-const Nav = () => (
+const Nav: FC = () => (
   <nav>
     <ul>
       <li>
