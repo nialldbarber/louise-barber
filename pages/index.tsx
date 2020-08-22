@@ -1,15 +1,13 @@
 import React, {FC} from 'react';
 // import Link from 'next/link';
 import CustomHead from '../components/custom-head';
-import Nav from '../components/nav';
+import {client} from '../prismic-configuration';
 
-const Home: FC = () => {
+const Home: FC = ({title: {data}}) => {
   return (
     <div>
       <CustomHead title="Home" />
-      <Nav />
       <div className="hero">
-        <h1 className="title">Louise Barber</h1>
         <div className="row">
           <p>Hello</p>
         </div>
@@ -17,5 +15,15 @@ const Home: FC = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const title = await client.getSingle('sitetitle');
+
+  return {
+    props: {
+      title,
+    },
+  };
+}
 
 export default Home;
