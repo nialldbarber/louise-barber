@@ -1,10 +1,12 @@
 module.exports = {
-  webpack: config => {
-    // Fixes npm packages that depend on `fs` module
+  env: {
+    SPACE_ID: 'hx2pnnu2mga3',
+    CONTENT_DELIVERY_API: '3RPJQMCsQmaQU60855lFyVspIudJUGsZtILM6kPFuto',
+  },
+  webpack: (config) => {
     config.node = {
-      fs: 'empty'
-    }
-
-    return config
-  }
-}
+      fs: 'empty',
+    };
+    return config;
+  },
+};

@@ -1,19 +1,22 @@
-import React from 'react';
+import React, {FC} from 'react';
 import type {AppProps} from 'next/app';
 import {ThemeProvider} from 'styled-components';
+import {AnimatePresence} from 'framer-motion';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import {theme, GlobalStyle} from '../styles/global';
 
-function App({Component, pageProps}: AppProps) {
+const App: FC<AppProps> = ({Component, pageProps}) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header />
-      <Component {...pageProps} />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} />
+      </AnimatePresence>
       <Footer />
     </ThemeProvider>
   );
-}
+};
 
 export default App;

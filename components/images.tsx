@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {FC} from 'react';
+import Link from 'next/link';
 
-const ImageGrid = () => {
+interface ImageGridProps {
+  id: string;
+  url: string;
+}
+
+const Image: FC<ImageGridProps> = ({id, url}) => {
   return (
-    <div>
-      <p>Images here</p>
-    </div>
+    <Link href="/art/[id]" as={`/art/${id}`}>
+      <div>
+        <a>
+          <img src={url} alt="image" />
+        </a>
+      </div>
+    </Link>
   );
 };
 
-export default ImageGrid;
+export default Image;

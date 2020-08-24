@@ -1,64 +1,32 @@
-import React, {FC} from 'react';
-import {GetStaticProps} from 'next';
-import Link from 'next/link';
-import Prismic from 'prismic-javascript';
-import {client} from '../prismic-configuration';
-import Images from '../components/images';
-import CustomHead from '../components/custom-head';
+import React from 'react';
+import {NextPage} from 'next';
+import client from 'utils/api';
+import CustomHead from 'components/custom-head';
+import Image from 'components/images';
+import {MAIN_IMAGES} from 'constants/api';
 
-interface Image {
-  params: {
-    data: {
-      main_image: {
-        alt: string;
-        copyright: string;
-        dimensions: {
-          height: number;
-          width: number;
-        };
-        url: string;
-      };
-    };
-    href: string;
-    id: string;
-    slugs?: string[];
-    tags?: string[];
-    uid?: string;
-  };
-}
-
-interface HomeProps {
-  paths: Image[];
-}
-
-const Home: FC<HomeProps> = ({paths}) => {
-  console.log(paths);
+const Home: NextPage = ({art}) => {
   return (
-    <div>
+    <>
       <CustomHead title="Home" />
       <div>
-        {paths.map((image) => {
-          const id = image?.params?.id;
-          return (
-            <Link key={id} href="/art/[id]" as={`/art/${`hello`}`}>
-              <a>
-                <img src={image?.params?.data?.main_image?.url} alt="test" />
-              </a>
-            </Link>
-          );
+        {art.map((image: any) => {
+          console.log(image);
+          const id = image?.sys?.id;
+          const url = `https:${image?.fields.mainImage[0].fields.file.url}`;
+          return <Image key={id} id={id} url={url} />;
         })}
-        <Images />
       </div>
-    </div>
+    </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const {results} = await client.query(
-    Prismic.Predicates.at('document.type', 'mainimages')
-  );
-  const paths = results.map((params) => ({params}));
-  return {props: {paths}};
+Home.getInitialProps = async () => {
+  const entries = await client.getEntries({
+    content_type: MAIN_IMAGES,
+  });
+
+  return {art: entries.items};
 };
 
 export default Home;

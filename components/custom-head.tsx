@@ -1,16 +1,22 @@
 import React, {FC} from 'react';
 import Head from 'next/head';
-import {SITE_TITLE} from '../constants/config';
+import {SITE_TITLE} from 'constants/config';
 
-type HeadTitle = {title: string};
+interface HeadTitle {
+  title?: string;
+  description?: string;
+}
 
-const CustomHead: FC<HeadTitle> = ({title}) => {
+let defaultDescription: string = '';
+
+const CustomHead: FC<HeadTitle> = ({title, description}) => {
   return (
     <Head>
-      <title>
-        {SITE_TITLE} | {title}
-      </title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta charSet="UTF-8" />
+      <title>{`${SITE_TITLE} | ${title}` || ''}</title>
+      <meta name="description" content={description || defaultDescription} />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="icon" href="/static/favicon.ico" />
       <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap"
         rel="stylesheet"

@@ -1,6 +1,6 @@
 import React from 'react';
-import {SITE_TITLE} from '../constants/config';
-import Nav from './nav';
+import Nav from 'components/nav';
+import {SITE_TITLE} from 'constants/config';
 
 const Header = () => {
   return (
