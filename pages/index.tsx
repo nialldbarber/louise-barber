@@ -1,51 +1,33 @@
-import React from 'react';
-import {NextPage, GetServerSideProps} from 'next';
-import styled from 'styled-components';
+import {NextPage, GetServerSideProps, GetServerSidePropsContext} from 'next';
 import client from 'utils/api';
 import CustomHead from 'components/custom-head';
 import Image from 'components/images';
 import {MAIN_IMAGES} from 'constants/api';
+import {ImageGrid} from 'styles/pages/index';
+import {Entries} from 'types/pages/index';
 
-const ImageGrid = styled.div`
-  display: flex;
-
-  div {
-    a {
-      cursor: pointer;
-
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
-  }
-`;
-
-const Home: NextPage = ({items}) => {
-  // console.log(items);
+const Home: NextPage<Entries> = (entries) => {
+  console.log(entries);
   return (
     <>
       <CustomHead title="Home" />
       <ImageGrid>
-        {items.map((image: any) => {
-          // console.log(image);
+        {entries.items.map((image) => {
           const id = image?.sys?.id;
           const url = `https:${image?.fields?.mainImage[0]?.fields?.file?.url}`;
-          return <Image key={id} id={id} url={url} />;
+          return url ? <Image key={id} id={id} url={url} /> : null;
         })}
       </ImageGrid>
     </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSidePropsContext) => {
   const entries = await client.getEntries({
     content_type: MAIN_IMAGES,
   });
-
-  return {
-    props: entries,
-  };
+  
+  return {props: entries};
 };
 
 export default Home;

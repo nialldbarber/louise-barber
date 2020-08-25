@@ -1,13 +1,5 @@
 import {createGlobalStyle} from 'styled-components';
-
-const theme = {
-  font: {
-    main: "'Inter', sans-serif",
-  },
-  colors: {
-    black: '#111',
-  },
-};
+import {theme} from 'styles/style-state';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -40,8 +32,8 @@ const GlobalStyle = createGlobalStyle`
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
-
 
   input,
   textarea {

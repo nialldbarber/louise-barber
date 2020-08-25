@@ -1,14 +1,17 @@
 import React, {FC} from 'react';
 import Link from 'next/link';
+import {navItems} from 'utils/site-config';
 
 const Nav: FC = () => (
   <nav>
     <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
+      {navItems.map(({id, href, page}) => (
+        <li key={id}>
+          <Link href={href}>
+            <a>{page}</a>
+          </Link>
+        </li>
+      ))}
     </ul>
   </nav>
 );
