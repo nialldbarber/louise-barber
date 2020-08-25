@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Nav from 'components/nav';
+import {MainHeader} from 'styles/typography/header';
 import {SITE_TITLE} from 'constants/config';
 
 const Header = () => {
@@ -8,7 +9,7 @@ const Header = () => {
     <header>
       <Link href="/">
         <a>
-          <h1>{SITE_TITLE}</h1>
+          <MainHeader>{SITE_TITLE}</MainHeader>
         </a>
       </Link>
       <Nav />

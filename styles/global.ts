@@ -5,7 +5,7 @@ const theme = {
     main: "'Inter', sans-serif",
   },
   colors: {
-    primary: '#0070f3',
+    black: '#111',
   },
 };
 
@@ -30,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: ${({theme}) => theme.font.main};
+    color: ${({theme}) => theme.colors.black};
   } 
 
   a {
