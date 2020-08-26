@@ -6,4 +6,8 @@ export const theme = {
     black: '#111',
     white: '#fff'
   },
+  dimensions: {
+    headerHeight: '80px',
+    footerHeight: '50px',
+  }
 };

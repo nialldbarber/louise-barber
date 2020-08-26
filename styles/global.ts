@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: ${({theme}) => theme.colors.black};
   }
 
   ul {
@@ -40,11 +41,17 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     outline: none;
   }
+
   button {
     appearance: none;
     outline: none;
     border: none;
     cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
   }
 `;
 

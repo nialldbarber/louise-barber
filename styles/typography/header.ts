@@ -5,14 +5,30 @@ const HeaderContainer = styled.header`
   ${flexCenterMixin};
   position: relative;
   background: ${({theme}) => theme.colors.white};
-  height: 5rem;
+  height: ${({theme}) => theme.dimensions.headerHeight};
 
   nav {
     ${flexCenterMixin};
     position: absolute;
-    right: 0;
+    right: 2rem;
     top: 0;
     bottom: 0;
+
+    ul {
+      display: flex;
+
+      li {
+        a {
+          padding: 1rem;
+        }
+
+        &:last-child {
+          a {
+            padding-right: 0;
+          }
+        }
+      }
+    }
   }
 `;
 

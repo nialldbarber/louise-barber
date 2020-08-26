@@ -1,18 +1,75 @@
 import styled from 'styled-components';
 
 const ImageGrid = styled.div`
-  display: flex;
+  .masonry-grid {
+    display: flex;
+    margin-left: -30px; /* gutter size offset */
+    width: auto;
+  }
 
-  div {
-    a {
-      cursor: pointer;
+  .masonry-grid-column {
+    padding-left: 30px; /* gutter size */
+    background-clip: padding-box;
+  }
+  
+  /* Style your items */
+  .masonry-grid-column > div { /* change div to reference your elements you put in <Masonry> */
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
 
-      img {
-        width: 100%;
-        height: auto;
+  a {
+    position: relative;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+
+    .title-container {
+      height: 50px;
+      top: 50%;
+      position: absolute;
+      right: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      overflow: hidden;
+      z-index: 2;    
+
+      .image-title {
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        transform: translateX(-50%);
+        transition: .25s cubic-bezier(.215, .61, .355, 1);
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: ${({theme}) => theme.colors.white};
+      opacity: 0;
+      z-index: 0;
+    }
+
+    &:hover {
+      .image-title {
+        top: 0;
+      }
+
+      &:after {
+        opacity: 0.96;
+        transition: .475s cubic-bezier(.215, .61, .355, 1);
       }
     }
   }
 `;
+
+// const Thumbnail = styled.div`
+
+// `;
 
 export {ImageGrid};
