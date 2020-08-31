@@ -4,7 +4,9 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "test": "jest",
+    "rome:check": "rome check"
   },
   "dependencies": {
     "contentful": "^7.14.6",
@@ -19,6 +21,8 @@
   "devDependencies": {
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "@testing-library/dom": "^7.23.0",
+    "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.9",
     "@types/node": "^14.6.0",
     "@types/react": "^16.9.46",
@@ -26,8 +30,18 @@
     "babel-jest": "^26.3.0",
     "eslint-config-kentcdodds": "^14.14.2",
     "jest": "^26.4.2",
+    "jest-dom": "^4.0.0",
     "prettier": "^2.0.5",
     "react-test-renderer": "^16.13.1",
+    "rome": "^10.0.4-beta",
     "typescript": "^4.0.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "ts",
+      "tsx"
+    ]
   }
 }

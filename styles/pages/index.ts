@@ -55,7 +55,7 @@ const ImageGrid = styled.div`
       left: 0;
       bottom: 0;
       right: 0;
-      background: ${({theme}) => theme.colors.white};
+      background: ${({theme}) => theme?.colors?.white};
       opacity: 0;
       z-index: 0;
     }

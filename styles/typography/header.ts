@@ -4,8 +4,8 @@ import {flexCenterMixin} from 'styles/mixins';
 const HeaderContainer = styled.header`
   ${flexCenterMixin};
   position: relative;
-  background: ${({theme}) => theme.colors.white};
-  height: ${({theme}) => theme.dimensions.headerHeight};
+  background: ${({theme}) => theme?.colors?.white};
+  height: ${({theme}) => theme?.dimensions?.headerHeight};
 
   nav {
     ${flexCenterMixin};
@@ -35,9 +35,9 @@ const HeaderContainer = styled.header`
             position: absolute;
             bottom: 0.5rem;
             height: 1px;
-            background: ${({theme}) => theme.colors.purple};
+            background: ${({theme}) => theme?.colors?.purple};
             width: 0;
-            transition: .275s ${({theme}) => theme.animation.swoop};
+            transition: .275s ${({theme}) => theme?.animation?.swoop};
           }
 
           &:after {
@@ -56,7 +56,7 @@ const HeaderContainer = styled.header`
 const MainHeader = styled.h1`
   margin: 0;
   font-size: 2rem;
-  color: ${({theme}) => theme.colors.black};
+  color: ${({theme}) => theme?.colors?.black};
   text-align: center;
 `;
 

@@ -21,13 +21,13 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: ${({theme}) => theme.font.main};
-    color: ${({theme}) => theme.colors.black};
+    font-family: ${({theme}) => theme?.font?.main};
+    color: ${({theme}) => theme?.colors?.black};
   } 
 
   a {
     text-decoration: none;
-    color: ${({theme}) => theme.colors.black};
+    color: ${({theme}) => theme?.colors?.black};
   }
 
   ul {
