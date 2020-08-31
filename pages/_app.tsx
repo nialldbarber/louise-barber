@@ -13,7 +13,7 @@ const App: FC<AppProps> = ({Component, pageProps}) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <AnimatedCursor />
+      <AnimatedCursor color='147,112,219' />
       <Header />
       <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} />

@@ -1,4 +1,5 @@
 import {NextPage, GetServerSideProps, GetServerSidePropsContext} from 'next';
+import {motion} from 'framer-motion';
 import Masonry from 'react-masonry-css';
 import client from 'utils/api';
 import {getProgressiveImage} from 'utils/posts';
@@ -11,7 +12,6 @@ import {Entries} from 'types/pages/index';
 
 const breakpointColumnsObj = {
   default: 3,
-  1100: 3,
   700: 2,
   500: 1
 };
@@ -21,22 +21,28 @@ const Home: NextPage<Entries> = (entries) => {
   return (
     <>
       <CustomHead title="Home" />
-      <PageLayout>
-        <ImageGrid>
-          <Masonry
-            breakpointCols={breakpointColumnsObj} 
-            className="masonry-grid" 
-            columnClassName="masonry-grid-column"
-          >
-            {entries.items.map((image) => {
-              const id = image?.sys?.id;
-              const url = getProgressiveImage(image?.fields?.mainImage[0]?.fields?.file?.url);
-              const title = image?.fields?.mainImage[0]?.fields?.title;
-              return url ? <Image key={id} id={id} url={url} title={title} /> : null;
-            })}
-          </Masonry>
-        </ImageGrid>
-      </PageLayout>
+      <motion.div      
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <PageLayout>
+          <ImageGrid>
+            <Masonry
+              breakpointCols={breakpointColumnsObj} 
+              className="masonry-grid" 
+              columnClassName="masonry-grid-column"
+            >
+              {entries.items.map((image) => {
+                const id = image?.sys?.id;
+                const url = getProgressiveImage(image?.fields?.mainImage[1]?.fields?.file?.url);
+                const title = image?.fields?.mainImage[0]?.fields?.title;
+                return url ? <Image key={id} id={id} url={url} title={title} /> : null;
+              })}
+            </Masonry>
+          </ImageGrid>
+        </PageLayout>
+      </motion.div>
     </>
   );
 };

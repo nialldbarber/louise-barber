@@ -19,12 +19,33 @@ const HeaderContainer = styled.header`
 
       li {
         a {
+          position: relative;
           padding: 1rem;
-        }
 
-        &:last-child {
-          a {
-            padding-right: 0;
+          &:hover {
+            &:after, 
+            &:before {
+              width: 30%;
+            }
+          }
+
+          &:after, 
+          &:before {
+            content: "";
+            position: absolute;
+            bottom: 0.5rem;
+            height: 1px;
+            background: ${({theme}) => theme.colors.purple};
+            width: 0;
+            transition: .275s ${({theme}) => theme.animation.swoop};
+          }
+
+          &:after {
+            right: 50%;
+          }
+
+          &:before {
+            left: 50%;
           }
         }
       }

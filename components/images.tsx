@@ -12,7 +12,7 @@ const Image: FC<ImageGridProps> = ({id, url, title}) => {
     <Link href="/art/[id]" as={`/art/${id}`}>
       <div>
         <a>
-          <img src={url} alt="image" />
+          <img src={url} alt={title} />
           <div className="title-container">
             <p className="image-title">{title || ''}</p>
           </div>

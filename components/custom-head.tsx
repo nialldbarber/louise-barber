@@ -7,7 +7,7 @@ interface HeadTitle {
   description?: string;
 }
 
-let defaultDescription: string = '';
+let defaultDescription: string = 'Art by Louise Barber';
 
 const CustomHead: FC<HeadTitle> = ({title, description}) => {
   return (
@@ -17,8 +17,7 @@ const CustomHead: FC<HeadTitle> = ({title, description}) => {
       <meta name="description" content={description || defaultDescription} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/static/favicon.ico" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap"
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" 
         rel="stylesheet"
       ></link>
     </Head>

@@ -8,10 +8,14 @@ declare module 'styled-components' {
     colors: {
       black: string;
       white: string;
+      purple: string;
     },
     dimensions: {
       headerHeight: string,
       footerHeight: string,
     },
+    animation: {
+      swoop: string;
+    }
   }
 }

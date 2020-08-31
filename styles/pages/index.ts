@@ -15,7 +15,6 @@ const ImageGrid = styled.div`
   /* Style your items */
   .masonry-grid-column > div { /* change div to reference your elements you put in <Masonry> */
     margin-bottom: 30px;
-    cursor: pointer;
   }
 
   a {
@@ -23,6 +22,7 @@ const ImageGrid = styled.div`
     height: 100%;
     display: block;
     overflow: hidden;
+    transform: scale(1);
 
     .title-container {
       height: 50px;
@@ -56,12 +56,16 @@ const ImageGrid = styled.div`
     }
 
     &:hover {
+      transform: scale(.985);
+      will-change: transform;
+      transition: transform .5s;
+
       .image-title {
         top: 0;
       }
 
       &:after {
-        opacity: 0.96;
+        opacity: 0.8;
         transition: .475s cubic-bezier(.215, .61, .355, 1);
       }
     }
