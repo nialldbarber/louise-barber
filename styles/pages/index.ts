@@ -43,6 +43,11 @@ const ImageGrid = styled.div`
       }
     }
 
+    img {
+      transform: scale(1);
+      transition: .575s cubic-bezier(.215, .61, .355, 1);
+    }
+
     &:after {
       content: "";
       position: absolute;
@@ -62,6 +67,10 @@ const ImageGrid = styled.div`
 
       .image-title {
         top: 0;
+      }
+
+      img {
+        transform: scale(1.03);
       }
 
       &:after {
