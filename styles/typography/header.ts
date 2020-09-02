@@ -23,21 +23,21 @@ const HeaderContainer = styled.header`
           padding: 1rem;
 
           &:hover {
-            &:after, 
+            &:after,
             &:before {
               width: 30%;
             }
           }
 
-          &:after, 
+          &:after,
           &:before {
-            content: "";
+            content: '';
             position: absolute;
             bottom: 0.5rem;
             height: 1px;
             background: ${({theme}) => theme?.colors?.purple};
             width: 0;
-            transition: .275s ${({theme}) => theme?.animation?.swoop};
+            transition: 0.275s ${({theme}) => theme?.animation?.swoop};
           }
 
           &:after {

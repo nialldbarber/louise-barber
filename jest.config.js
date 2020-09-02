@@ -1,12 +1,10 @@
 module.exports = {
-  testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
+  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest"
+    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
   },
-  moduleDirectories: ["node_modules", "./"],
+  moduleDirectories: ['node_modules', './'],
   clearMocks: true,
   coverageDirectory: '.coverage',
-  setupFilesAfterEnv: [
-    "<rootDir>/setupTests.ts"
-  ]
+  setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
 };

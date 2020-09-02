@@ -11,9 +11,10 @@ const ImageGrid = styled.div`
     padding-left: 30px; /* gutter size */
     background-clip: padding-box;
   }
-  
+
   /* Style your items */
-  .masonry-grid-column > div { /* change div to reference your elements you put in <Masonry> */
+  .masonry-grid-column > div {
+    /* change div to reference your elements you put in <Masonry> */
     margin-bottom: 30px;
   }
 
@@ -31,24 +32,24 @@ const ImageGrid = styled.div`
       transform: translateY(-50%);
       width: 100%;
       overflow: hidden;
-      z-index: 2;    
+      z-index: 2;
 
       .image-title {
         position: absolute;
         left: 50%;
         top: 70%;
         transform: translateX(-50%);
-        transition: .25s cubic-bezier(.215, .61, .355, 1);
+        transition: 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
 
     img {
       transform: scale(1);
-      transition: .575s cubic-bezier(.215, .61, .355, 1);
+      transition: 0.575s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -60,9 +61,9 @@ const ImageGrid = styled.div`
     }
 
     &:hover {
-      transform: scale(.985);
+      transform: scale(0.985);
       will-change: transform;
-      transition: transform .5s;
+      transition: transform 0.5s;
 
       .image-title {
         top: 0;
@@ -74,7 +75,7 @@ const ImageGrid = styled.div`
 
       &:after {
         opacity: 0.8;
-        transition: .475s cubic-bezier(.215, .61, .355, 1);
+        transition: 0.475s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
   }

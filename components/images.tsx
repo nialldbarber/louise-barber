@@ -9,7 +9,7 @@ interface ImageGridProps {
   title: string;
 }
 
-const Image: FC<ImageGridProps> = ({id, url, title}) => { 
+const Image: FC<ImageGridProps> = ({id, url, title}) => {
   return (
     <Link href={`${ART_PAGE}[id]`} as={`${ART_PAGE}${id}`}>
       <a>

@@ -7,4 +7,4 @@ describe('<Nav /> ', () => {
     const container = render(<Nav />);
     expect(container).toMatchSnapshot();
   });
-})
+});

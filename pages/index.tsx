@@ -13,7 +13,7 @@ import {Entries} from 'types/pages/index';
 const breakpointColumnsObj = {
   default: 3,
   700: 2,
-  500: 1
+  500: 1,
 };
 
 const Home: NextPage<Entries> = (entries) => {
@@ -21,23 +21,27 @@ const Home: NextPage<Entries> = (entries) => {
   return (
     <>
       <CustomHead title="Home" />
-      <motion.div      
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+      <motion.div
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
       >
         <PageLayout>
           <ImageGrid>
             <Masonry
-              breakpointCols={breakpointColumnsObj} 
-              className="masonry-grid" 
+              breakpointCols={breakpointColumnsObj}
+              className="masonry-grid"
               columnClassName="masonry-grid-column"
             >
               {entries.items.map((image) => {
                 const id = image?.sys?.id;
-                const url = getProgressiveImage(image?.fields?.mainImage[1]?.fields?.file?.url);
+                const url = getProgressiveImage(
+                  image?.fields?.mainImage[1]?.fields?.file?.url
+                );
                 const title = image?.fields?.mainImage[0]?.fields?.title;
-                return url ? <Image key={id} id={id} url={url} title={title} /> : null;
+                return url ? (
+                  <Image key={id} id={id} url={url} title={title} />
+                ) : null;
               })}
             </Masonry>
           </ImageGrid>
@@ -47,11 +51,13 @@ const Home: NextPage<Entries> = (entries) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSidePropsContext) => {
+export const getServerSideProps: GetServerSideProps = async (
+  ctx: GetServerSidePropsContext
+) => {
   const entries = await client.getEntries({
     content_type: MAIN_IMAGES,
   });
-  
+
   return {props: entries};
 };
 

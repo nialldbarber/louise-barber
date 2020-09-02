@@ -12,10 +12,14 @@ const CustomHead: FC<HeadTitle> = ({title, description}) => {
     <Head>
       <meta charSet="UTF-8" />
       <title>{`${SITE_TITLE} | ${title}` || ''}</title>
-      <meta name="description" content={description || SITE_DEFAULT_DESCRIPTION} />
+      <meta
+        name="description"
+        content={description || SITE_DEFAULT_DESCRIPTION}
+      />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/static/favicon.ico" />
-      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" 
+      <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
         rel="stylesheet"
       ></link>
     </Head>

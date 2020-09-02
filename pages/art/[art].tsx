@@ -19,14 +19,14 @@ const ArtPage: NextPage<Art> = ({asset}) => {
   return (
     <>
       <CustomHead title={`Art | ${title}`} />
-      <motion.div      
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+      <motion.div
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
       >
         <PageLayout>
           <ImageContainer>
-            <img src={img} alt={title} style={{ maxWidth }} />
+            <img src={img} alt={title} style={{maxWidth}} />
           </ImageContainer>
         </PageLayout>
       </motion.div>
@@ -34,7 +34,9 @@ const ArtPage: NextPage<Art> = ({asset}) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSidePropsContext) => {
+export const getServerSideProps: GetServerSideProps = async (
+  ctx: GetServerSidePropsContext
+) => {
   const {art} = ctx.query;
   console.log(ctx.query);
   const entry: any = await client.getEntry(`${art}`);
