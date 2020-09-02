@@ -19,7 +19,6 @@ const ImageGrid = styled.div`
 
   a {
     position: relative;
-    height: 100%;
     display: block;
     overflow: hidden;
     transform: scale(1);

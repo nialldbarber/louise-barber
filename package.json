@@ -5,11 +5,11 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "test": "jest",
-    "rome:check": "rome check"
+    "test": "jest"
   },
   "dependencies": {
     "contentful": "^7.14.6",
+    "cursor-dot": "^1.0.5",
     "framer-motion": "^2.4.3-beta.2",
     "next": "^9.5.2",
     "react": "^16.13.1",

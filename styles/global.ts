@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    cursor: none;
 
     &:before, 
     &:after {
