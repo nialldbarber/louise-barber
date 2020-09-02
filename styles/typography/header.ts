@@ -6,12 +6,13 @@ const HeaderContainer = styled.header`
   position: relative;
   background: ${({theme}) => theme?.colors?.white};
   height: ${({theme}) => theme?.dimensions?.headerHeight};
+  padding-top: 2.5rem;
 
   nav {
     ${flexCenterMixin};
     position: absolute;
     right: 2rem;
-    top: 0;
+    top: 2.5rem;
     bottom: 0;
 
     ul {

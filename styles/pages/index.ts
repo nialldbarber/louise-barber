@@ -22,6 +22,7 @@ const ImageGrid = styled.div`
     position: relative;
     display: block;
     overflow: hidden;
+    margin-bottom: 2rem;
     transform: scale(1);
 
     .title-container {

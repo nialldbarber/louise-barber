@@ -2,6 +2,14 @@ import {createGlobalStyle} from 'styled-components';
 import {theme} from 'styles/style-state';
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'CocogooseProSemilight';
+    src: url('/fonts/CocogooseProSemilight-trial.ttf');
+    font-weight: 500;
+    font-display: auto;
+    font-style: normal;
+  }
+
   * {
     box-sizing: inherit;
     text-rendering: optimizeLegibility;
@@ -22,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: ${({theme}) => theme?.font?.main};
+    font-family: 'CocogooseProSemilight';
     color: ${({theme}) => theme?.colors?.black};
   } 
 

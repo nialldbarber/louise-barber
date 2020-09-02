@@ -13,6 +13,8 @@ const PageLayout = styled.div`
 
 const ImageContainer = styled.div`
   ${flexCenterMixin};
+  margin: 0 auto;
+  max-width: 70%;
 `;
 
 export {PageLayout, ImageContainer};
