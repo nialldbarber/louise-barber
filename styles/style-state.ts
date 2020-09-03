@@ -1,4 +1,4 @@
-export const theme = {
+export const lightTheme = {
   font: {
     main: "'Lato', sans-serif",
   },
@@ -13,5 +13,13 @@ export const theme = {
   },
   animation: {
     swoop: 'cubic-bezier(.215, .61, .355, 1)',
+  },
+};
+
+export const darkTheme = {
+  ...lightTheme,
+  colors: {
+    black: '#fff',
+    white: '#111',
   },
 };

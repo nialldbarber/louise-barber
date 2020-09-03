@@ -4,7 +4,7 @@ import {render, getQueriesForElement} from '@testing-library/react';
 
 const root = document.createElement('div');
 
-function testMatchesSnapshot(component: any) {
+function testMatchesSnapshot(component: any): void {
   test('matches snapshot', () => {
     const container = render(component);
     expect(container).toMatchSnapshot();

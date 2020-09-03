@@ -1,5 +1,4 @@
 import {createGlobalStyle} from 'styled-components';
-import {theme} from 'styles/style-state';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -32,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'CocogooseProSemilight';
     color: ${({theme}) => theme?.colors?.black};
+    background: ${({theme}) => theme?.colors?.white};
   } 
 
   a {
@@ -64,4 +64,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export {theme, GlobalStyle};
+export {GlobalStyle};

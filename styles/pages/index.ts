@@ -23,7 +23,9 @@ const ImageGrid = styled.div`
     display: block;
     overflow: hidden;
     margin-bottom: 2rem;
-    transform: scale(1);
+    will-change: transform;
+    transition: transform 0.5s;
+    overflow: hidden;
 
     .title-container {
       height: 50px;
@@ -62,10 +64,6 @@ const ImageGrid = styled.div`
     }
 
     &:hover {
-      transform: scale(0.985);
-      will-change: transform;
-      transition: transform 0.5s;
-
       .image-title {
         top: 0;
       }
