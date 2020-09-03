@@ -10,7 +10,7 @@ interface ImageGridProps {
 }
 
 const Images: FC<ImageGridProps> = ({id, url, title}) => {
-  return (
+  return id && url ? (
     <Link href={`${ART_PAGE}[id]`} as={`${ART_PAGE}${id}`}>
       <a>
         {<img src={url} alt={title} /> ?? null}
@@ -19,7 +19,7 @@ const Images: FC<ImageGridProps> = ({id, url, title}) => {
         </div>
       </a>
     </Link>
-  );
+  ) : null;
 };
 
 export default Images;

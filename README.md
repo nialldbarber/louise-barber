@@ -13,3 +13,4 @@
 ### Todos:
 
 - Set up rome linting
+- Add dark mode option
