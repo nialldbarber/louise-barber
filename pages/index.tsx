@@ -5,9 +5,9 @@ import client from 'utils/api';
 import {getProgressiveImage} from 'utils/posts';
 import CustomHead from 'components/custom-head';
 import Image from 'components/images';
-import {MAIN_IMAGES} from 'constants/api';
 import {PageLayout} from 'styles/layout/index';
 import {ImageGrid} from 'styles/pages/index';
+import {MAIN_IMAGES} from 'constants/api';
 import {Entries} from 'types/pages/index';
 
 const breakpointColumnsObj = {
@@ -17,7 +17,6 @@ const breakpointColumnsObj = {
 };
 
 const Home: NextPage<Entries> = (entries) => {
-  console.log(entries);
   return (
     <>
       <CustomHead title="Home" />

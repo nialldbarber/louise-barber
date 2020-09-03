@@ -14,7 +14,7 @@ function formatTitleForSlug(url: string | number): string {
 /**
  * Contentful specific function to whack https in front of url
  *
- * @param url
+ * @param url string
  */
 function getProgressiveImage(url: string): string {
   return `https:${url}?fm=jpg&fl=progressive`;

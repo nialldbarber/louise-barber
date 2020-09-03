@@ -2,8 +2,8 @@ import React from 'react';
 import {NextPage, GetServerSideProps, GetServerSidePropsContext} from 'next';
 import {motion} from 'framer-motion';
 import client from 'utils/api';
-import CustomHead from 'components/custom-head';
 import {getProgressiveImage} from 'utils/posts';
+import CustomHead from 'components/custom-head';
 import {PageLayout, ImageContainer} from 'styles/layout';
 import {MainImages} from 'types/pages/index';
 

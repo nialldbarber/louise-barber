@@ -1,1 +1,1 @@
-export const MAIN_IMAGES = 'mainImages';
+export const MAIN_IMAGES: string = 'mainImages';
