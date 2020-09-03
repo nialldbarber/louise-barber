@@ -20,4 +20,13 @@ function getProgressiveImage(url: string): string {
   return `https:${url}?fm=jpg&fl=progressive`;
 }
 
-export {formatTitleForSlug, getProgressiveImage};
+/**
+ * Breakpoints for <Masonry />
+ */
+const breakpointColumnsObj = {
+  default: 3,
+  700: 2,
+  500: 1,
+};
+
+export {formatTitleForSlug, getProgressiveImage, breakpointColumnsObj};

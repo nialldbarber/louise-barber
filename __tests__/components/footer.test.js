@@ -4,7 +4,7 @@ import {getCurrentYear} from 'utils/site-config';
 import {SITE_TITLE} from 'constants/config';
 
 describe('<Footer /> ', () => {
-  test('Matches snapshot', () => {
+  test('matches snapshot', () => {
     const container = render(<Footer />);
     expect(container).toMatchSnapshot();
   });

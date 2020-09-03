@@ -3,7 +3,7 @@ import Nav from 'components/nav';
 import {navItems} from 'utils/site-config';
 
 describe('<Nav /> ', () => {
-  test('Matches snapshot', () => {
+  test('matches snapshot', () => {
     const container = render(<Nav />);
     expect(container).toMatchSnapshot();
   });

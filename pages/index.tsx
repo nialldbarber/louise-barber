@@ -2,19 +2,13 @@ import {NextPage, GetServerSideProps, GetServerSidePropsContext} from 'next';
 import {motion} from 'framer-motion';
 import Masonry from 'react-masonry-css';
 import client from 'utils/api';
-import {getProgressiveImage} from 'utils/posts';
+import {getProgressiveImage, breakpointColumnsObj} from 'utils/posts';
 import CustomHead from 'components/custom-head';
-import Image from 'components/images';
+import Images from 'components/images';
 import {PageLayout} from 'styles/layout/index';
 import {ImageGrid} from 'styles/pages/index';
 import {MAIN_IMAGES} from 'constants/api';
 import {Entries} from 'types/pages/index';
-
-const breakpointColumnsObj = {
-  default: 3,
-  700: 2,
-  500: 1,
-};
 
 const Home: NextPage<Entries> = (entries) => {
   return (
@@ -39,7 +33,7 @@ const Home: NextPage<Entries> = (entries) => {
                 );
                 const title = image?.fields?.mainImage[0]?.fields?.title;
                 return url ? (
-                  <Image key={id} id={id} url={url} title={title} />
+                  <Images key={id} id={id} url={url} title={title} />
                 ) : null;
               })}
             </Masonry>

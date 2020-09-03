@@ -9,11 +9,11 @@ interface ImageGridProps {
   title: string;
 }
 
-const Image: FC<ImageGridProps> = ({id, url, title}) => {
+const Images: FC<ImageGridProps> = ({id, url, title}) => {
   return (
     <Link href={`${ART_PAGE}[id]`} as={`${ART_PAGE}${id}`}>
       <a>
-        <img src={url} alt={title} />
+        {<img src={url} alt={title} /> ?? null}
         <div className="title-container">
           <p className="image-title">{title || ''}</p>
         </div>
@@ -22,4 +22,4 @@ const Image: FC<ImageGridProps> = ({id, url, title}) => {
   );
 };
 
-export default Image;
+export default Images;

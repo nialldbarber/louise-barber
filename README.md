@@ -1,7 +1,15 @@
-Prismic
+## Massively overengineered site for my sister.
 
-Next.js
+### Tech used
 
-Styled components
+- Typescript
+- Rome
+- React
+- Styled Components
+- Next.js
+- Contentful
+- React Testing Library/Jest
 
-Framer motion
+### Todos:
+
+- Set up rome linting
