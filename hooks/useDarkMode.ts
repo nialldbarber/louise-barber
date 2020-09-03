@@ -1,23 +1,31 @@
 import {useState, useEffect} from 'react';
 import {LIGHT_MODE, DARK_MODE, THEME} from 'constants/theme';
 
+// taken from this source: https://css-tricks.com/a-dark-mode-toggle-with-react-and-themeprovider/
 const useDarkMode = () => {
   const [theme, setTheme] = useState<string>(DARK_MODE);
 
+  const setMode = (mode: string) => {
+    window.localStorage.setItem(THEME, mode);
+    setTheme(mode);
+  };
+
   const toggleTheme = () => {
     if (theme === LIGHT_MODE) {
-      window.localStorage.setItem(THEME, DARK_MODE);
-      setTheme(DARK_MODE);
+      setMode(DARK_MODE);
     } else {
-      window.localStorage.setItem(THEME, LIGHT_MODE);
-      setTheme(LIGHT_MODE);
+      setMode(LIGHT_MODE);
     }
   };
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem(THEME);
-    localTheme && setTheme(localTheme);
-  }, [theme]);
+    if (localTheme) {
+      setTheme(localTheme);
+    } else {
+      setMode(LIGHT_MODE);
+    }
+  }, []);
 
   return {theme, toggleTheme};
 };
