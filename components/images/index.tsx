@@ -1,19 +1,21 @@
-import React, {FC} from 'react';
+import React, {FC, CSSProperties} from 'react';
 import Link from 'next/link';
 import {motion} from 'framer-motion';
+import SingleImage from 'components/images/single-image';
 import {ART_PAGE} from 'constants/config';
 
-interface ImageGridProps {
-  id: string;
-  url: string;
+export interface ImageGridProps {
+  id?: string;
+  url?: string;
   title: string;
+  style?: CSSProperties;
 }
 
 const Images: FC<ImageGridProps> = ({id, url, title}) => {
   return id && url ? (
     <Link href={`${ART_PAGE}[id]`} as={`${ART_PAGE}${id}`}>
       <a>
-        {<img src={url} alt={title} /> ?? null}
+        {<SingleImage img={url} title={title} /> ?? null}
         <div className="title-container">
           <p className="image-title">{title || ''}</p>
         </div>

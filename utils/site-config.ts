@@ -1,17 +1,13 @@
-type Items = {
-  id: number;
-  href: string;
-  page: string;
-};
+import {lightTheme, darkTheme} from 'styles/style-state';
+import {LIGHT_MODE} from 'constants/theme';
 
-const navItems: Array<Items> = [
-  {id: 1, href: '/', page: 'Home'},
-  {id: 2, href: '/about', page: 'About'},
-];
+function getThemeMode(theme: string) {
+  return theme === LIGHT_MODE ? lightTheme : darkTheme;
+}
 
 function getCurrentYear(): number {
   const date: Date = new Date();
   return date.getFullYear();
 }
 
-export {navItems, getCurrentYear};
+export {getThemeMode, getCurrentYear};

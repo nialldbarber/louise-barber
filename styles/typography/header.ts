@@ -11,9 +11,9 @@ const HeaderContainer = styled.header`
   nav {
     ${flexCenterMixin};
     position: absolute;
-    right: 2rem;
     top: 2.5rem;
     bottom: 0;
+    right: 2rem;
 
     ul {
       display: flex;
@@ -35,9 +35,9 @@ const HeaderContainer = styled.header`
             content: '';
             position: absolute;
             bottom: 0.5rem;
+            width: 0;
             height: 1px;
             background: ${({theme}) => theme?.colors?.purple};
-            width: 0;
             transition: 0.275s ${({theme}) => theme?.animation?.swoop};
           }
 

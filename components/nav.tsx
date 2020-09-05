@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import Link from 'next/link';
-import {navItems} from 'utils/site-config';
+import {navItems} from 'constants/config';
 
 const Nav: FC = () => {
   return (

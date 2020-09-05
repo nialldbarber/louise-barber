@@ -11,6 +11,7 @@ declare module 'styled-components' {
       purple: string;
     };
     dimensions: {
+      maxWidth: string;
       headerHeight: string;
       footerHeight: string;
     };

@@ -4,6 +4,7 @@ import {motion} from 'framer-motion';
 import client from 'utils/api';
 import {getProgressiveImage} from 'utils/posts';
 import CustomHead from 'components/custom-head';
+import SingleImage from 'components/images/single-image';
 import {PageLayout, ImageContainer} from 'styles/layout';
 import {MainImages} from 'types/pages/index';
 
@@ -12,7 +13,7 @@ interface Art {
 }
 
 const ArtPage: NextPage<Art> = ({asset}) => {
-  console.log(asset);
+  // console.log(asset);
   const {title, file} = asset?.fields;
   const img = getProgressiveImage(file?.url);
   const maxWidth = file?.details?.image?.width;
@@ -26,7 +27,7 @@ const ArtPage: NextPage<Art> = ({asset}) => {
       >
         <PageLayout>
           <ImageContainer>
-            <img src={img} alt={title} style={{maxWidth}} />
+            <SingleImage img={img} title={title} style={{maxWidth}} />
           </ImageContainer>
         </PageLayout>
       </motion.div>
@@ -38,7 +39,7 @@ export const getServerSideProps: GetServerSideProps = async (
   ctx: GetServerSidePropsContext
 ) => {
   const {art} = ctx.query;
-  console.log(ctx.query);
+  // console.log(ctx.query);
   const entry: any = await client.getEntry(`${art}`);
   const imgId = entry.fields.mainImage[0].sys.id;
   const asset = await client.getAsset(imgId);

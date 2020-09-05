@@ -3,7 +3,7 @@ import {LIGHT_MODE, DARK_MODE, THEME} from 'constants/theme';
 
 // taken from this source: https://css-tricks.com/a-dark-mode-toggle-with-react-and-themeprovider/
 const useDarkMode = () => {
-  const [theme, setTheme] = useState<string>(DARK_MODE);
+  const [theme, setTheme] = useState<string>('');
 
   const setMode = (mode: string) => {
     window.localStorage.setItem(THEME, mode);

@@ -8,6 +8,7 @@ export const lightTheme = {
     purple: 'rgb(147,112,219)',
   },
   dimensions: {
+    maxWidth: '1200px',
     headerHeight: '80px',
     footerHeight: '50px',
   },

@@ -4,30 +4,29 @@ import dynamic from 'next/dynamic';
 import {ThemeProvider} from 'styled-components';
 import {AnimatePresence} from 'framer-motion';
 import useDarkMode from 'hooks/useDarkMode';
+import {getThemeMode} from 'utils/site-config';
 import Header from 'components/header';
 import Footer from 'components/footer';
 import {GlobalStyle} from 'styles/global';
-import {lightTheme, darkTheme} from 'styles/style-state';
-import {LIGHT_MODE} from 'constants/theme';
 
-const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
-  ssr: false,
-});
+// const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
+//   ssr: false,
+// });
 
 const App: FC<AppProps> = ({Component, pageProps}) => {
   const {theme, toggleTheme} = useDarkMode();
-  const themeMode = theme === LIGHT_MODE ? lightTheme : darkTheme;
+  const themeMode = getThemeMode(theme);
 
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
-      <AnimatedCursor color="147,112,219" />
+      {/* <AnimatedCursor color="147,112,219" /> */}
       <Header />
       <AnimatePresence exitBeforeEnter>
-        <>
+        <main>
           <Component {...pageProps} />
           <button onClick={toggleTheme}>+</button>
-        </>
+        </main>
       </AnimatePresence>
       <Footer />
     </ThemeProvider>

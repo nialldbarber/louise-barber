@@ -1,21 +1,22 @@
 import styled from 'styled-components';
+import {fullSpacedMixin} from 'styles/mixins';
+
+const masonrySpace = 30;
 
 const ImageGrid = styled.div`
   .masonry-grid {
     display: flex;
-    margin-left: -30px; /* gutter size offset */
+    margin-left: -${masonrySpace}px; /* gutter size offset */
     width: auto;
   }
 
   .masonry-grid-column {
-    padding-left: 30px; /* gutter size */
+    padding-left: ${masonrySpace}px; /* gutter size */
     background-clip: padding-box;
   }
 
-  /* Style your items */
   .masonry-grid-column > div {
-    /* change div to reference your elements you put in <Masonry> */
-    margin-bottom: 30px;
+    margin-bottom: ${masonrySpace}px;
   }
 
   a {
@@ -24,23 +25,23 @@ const ImageGrid = styled.div`
     overflow: hidden;
     margin-bottom: 2rem;
     will-change: transform;
-    transition: transform 0.5s;
     overflow: hidden;
+    transition: transform 0.5s;
 
     .title-container {
-      height: 50px;
-      top: 50%;
       position: absolute;
+      top: 50%;
       right: 0;
-      transform: translateY(-50%);
       width: 100%;
+      height: 50px;
       overflow: hidden;
+      transform: translateY(-50%);
       z-index: 2;
 
       .image-title {
         position: absolute;
-        left: 50%;
         top: 70%;
+        left: 50%;
         transform: translateX(-50%);
         transition: 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
@@ -54,10 +55,7 @@ const ImageGrid = styled.div`
     &:after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
+      ${fullSpacedMixin};
       background: ${({theme}) => theme?.colors?.white};
       opacity: 0;
       z-index: 0;
@@ -79,9 +77,5 @@ const ImageGrid = styled.div`
     }
   }
 `;
-
-// const Thumbnail = styled.div`
-
-// `;
 
 export {ImageGrid};

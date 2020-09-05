@@ -1,4 +1,5 @@
 import {createGlobalStyle} from 'styled-components';
+import {noBorderMixin, noMarginOrPaddingMixin} from 'styles/mixins';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -10,51 +11,42 @@ const GlobalStyle = createGlobalStyle`
   }
 
   * {
-    box-sizing: inherit;
+    box-sizing: border-box;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    cursor: none;
-
-    &:before, 
-    &:after {
-      box-sizing: inherit;
-    }
   }
 
   html {
-    box-sizing: border-box;
-    line-height: 1.15;
+    box-sizing: border-box;    
   }
 
   body {
-    margin: 0;
-    padding: 0;
+    ${noMarginOrPaddingMixin};
     font-family: 'CocogooseProSemilight';
+    font-size: 16px;
+    line-height: 1.15;
     color: ${({theme}) => theme?.colors?.black};
     background: ${({theme}) => theme?.colors?.white};
   } 
 
   a {
+    color: inherit;
     text-decoration: none;
-    color: ${({theme}) => theme?.colors?.black};
   }
 
   ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    ${noMarginOrPaddingMixin};
   }
 
   input,
   textarea {
-    border: none;
-    outline: none;
+    ${noBorderMixin};
   }
 
   button {
+    ${noBorderMixin};
     appearance: none;
-    outline: none;
-    border: none;
     cursor: pointer;
   }
 
