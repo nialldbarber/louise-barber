@@ -8,10 +8,16 @@ Object {
       <a
         href="/art//art/12345abcdefg"
       >
-        <img
-          alt="image title"
-          src="https://some-website.com"
-        />
+        <picture>
+          <source
+            srcset="https://some-website.com"
+            type="image/avif"
+          />
+          <img
+            alt="An image titled image title"
+            src="https://some-website.com"
+          />
+        </picture>
         <div
           class="title-container"
         >
@@ -28,10 +34,16 @@ Object {
     <a
       href="/art//art/12345abcdefg"
     >
-      <img
-        alt="image title"
-        src="https://some-website.com"
-      />
+      <picture>
+        <source
+          srcset="https://some-website.com"
+          type="image/avif"
+        />
+        <img
+          alt="An image titled image title"
+          src="https://some-website.com"
+        />
+      </picture>
       <div
         class="title-container"
       >

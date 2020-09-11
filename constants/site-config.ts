@@ -9,7 +9,10 @@ export const navItems: Array<Items> = [
   {id: 2, href: '/about', page: 'About'},
 ];
 
-export const SITE_TITLE: string = 'Louise Hannah Barber';
-export const FOOTER_TITLE: string = 'LHB';
-export const SITE_DEFAULT_DESCRIPTION: string = 'Art by Louise Barber';
 export const ART_PAGE: string = '/art/';
+
+export enum TITLE {
+  MAIN = 'Louise Hannah Barber',
+  FOOTER = 'LHB',
+  DESC = 'Art by Louise Barber',
+}

@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    box-sizing: border-box;    
+    box-sizing: border-box;
   }
 
   body {
@@ -48,7 +48,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .main-nav {
-    z-index: 2;
+    /* z-index: 2; */
+
+    &.open {
+      z-index: 5;
+      transition: .45s ease;
+    }
+
+    &.closed {
+      ul {
+        z-index: -1;
+      }
+    }
 
     button {
       svg {
@@ -58,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
         }
       }
 
-      &.open {        
+      &.open {
         svg {
           path {
             stroke: ${({theme}) => theme?.colors?.white};

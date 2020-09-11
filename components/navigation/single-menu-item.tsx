@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import Link from 'next/link';
 import {motion} from 'framer-motion';
 import useStore from 'state/store';
-import {Items} from 'constants/config';
+import {Items} from 'constants/site-config';
 
 const variants = {
   open: {

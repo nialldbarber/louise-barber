@@ -8,12 +8,9 @@ import SingleImage from 'components/images/single-image';
 import {PageLayout, ImageContainer} from 'styles/layout';
 import {MainImages} from 'types/pages/index';
 
-interface Art {
-  asset: MainImages;
-}
+type Art = {asset: MainImages};
 
 const ArtPage: NextPage<Art> = ({asset}) => {
-  // console.log(asset);
   const {title, file} = asset?.fields;
   const img = getProgressiveImage(file?.url);
   const maxWidth = file?.details?.image?.width;

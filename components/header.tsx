@@ -2,14 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import Navigation from 'components/navigation';
 import {HeaderContainer, MainHeader} from 'styles/typography/header';
-import {SITE_TITLE} from 'constants/config';
+import {TITLE} from 'constants/site-config';
 
 const Header = () => {
   return (
     <HeaderContainer>
       <Link href="/">
         <a>
-          <MainHeader>{SITE_TITLE}</MainHeader>
+          <MainHeader>{TITLE.MAIN}</MainHeader>
         </a>
       </Link>
       <Navigation />

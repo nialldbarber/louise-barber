@@ -2,7 +2,7 @@ import {render} from 'react-dom';
 import {root, testMatchesSnapshot, testTextIsNotNull} from 'utils/test-helpers';
 import Footer from 'components/footer';
 import {getCurrentYear} from 'utils/site-config';
-import {SITE_TITLE} from 'constants/config';
+import {TITLE} from 'constants/config';
 
 describe('<Footer /> ', () => {
   const component = <Footer />;
@@ -12,7 +12,7 @@ describe('<Footer /> ', () => {
     render(component, root);
 
     const currentYear = getCurrentYear();
-    const footerText = `@ ${SITE_TITLE} ${currentYear}`;
+    const footerText = `@ ${TITLE.FOOTER} ${currentYear}`;
 
     testTextIsNotNull(root, footerText);
   });

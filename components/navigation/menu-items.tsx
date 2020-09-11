@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {motion} from 'framer-motion';
 import SingleMenuItem from 'components/navigation/single-menu-item';
-import {navItems} from 'constants/config';
+import {navItems} from 'constants/site-config';
 
 const variants = {
   open: {

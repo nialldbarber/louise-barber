@@ -1,9 +1,9 @@
 import create from 'zustand';
 
 type State = {
-  isMenuOpen: boolean;
-  toggleMenu: () => void;
-  closeMenu: () => void;
+  isMenuOpen?: boolean;
+  toggleMenu?: () => void;
+  closeMenu?: () => void;
 };
 
 const useStore = create<State>((set) => ({

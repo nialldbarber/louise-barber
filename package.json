@@ -13,6 +13,7 @@
     "cursor-dot": "^1.0.5",
     "framer-motion": "^2.4.3-beta.2",
     "next": "^9.5.2",
+    "polished": "^3.6.6",
     "react": "^16.13.1",
     "react-animated-cursor": "^2.1.5",
     "react-dom": "^16.13.1",

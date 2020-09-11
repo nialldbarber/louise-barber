@@ -13,9 +13,7 @@ const Path: FC = (props) => (
   />
 );
 
-type MenuToggleProps = {
-  className: string;
-};
+type MenuToggleProps = {className: string};
 
 const MenuToggle: FC<MenuToggleProps> = ({className}) => {
   const {isMenuOpen, toggleMenu} = useStore();

@@ -1,7 +1,7 @@
 import React, {FC, CSSProperties} from 'react';
 import Link from 'next/link';
 import SingleImage from 'components/images/single-image';
-import {ART_PAGE} from 'constants/config';
+import {ART_PAGE} from 'constants/site-config';
 
 export interface ImageGridProps {
   id?: string;

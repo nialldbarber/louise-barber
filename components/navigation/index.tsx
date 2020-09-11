@@ -17,7 +17,7 @@ const sidebar = {
   closed: {
     clipPath: 'circle(0px at 40px 40px)',
     transition: {
-      delay: 0.5,
+      delay: 0.1,
       type: 'spring',
       stiffness: 400,
       damping: 40,
@@ -39,9 +39,11 @@ const Nav: FC = () => {
       ref={containerRef}
       className={`main-nav ${menuOpen}`}
     >
-      <motion.div className="nav-background" variants={sidebar} />
-      <MenuItems />
-      <MenuToggle className={menuOpen} />
+      <div className="nav-inner-wrapper">
+        <motion.div className="nav-background" variants={sidebar} />
+        <MenuItems />
+        <MenuToggle className={menuOpen} />
+      </div>
     </motion.nav>
   );
 };
