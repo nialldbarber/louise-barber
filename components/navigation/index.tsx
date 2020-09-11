@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import Link from 'next/link';
+import MenuToggle from 'components/navigation/menu-toggle';
 import {navItems} from 'constants/config';
 
 const Nav: FC = () => {
@@ -14,6 +15,7 @@ const Nav: FC = () => {
           </li>
         ))}
       </ul>
+      <MenuToggle />
     </nav>
   );
 };

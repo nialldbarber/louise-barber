@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     ${noMarginOrPaddingMixin};
-    font-family: 'CocogooseProSemilight';
+    font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
     line-height: 1.15;
     color: ${({theme}) => theme?.colors?.black};

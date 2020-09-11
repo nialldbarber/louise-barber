@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Nav from 'components/nav';
+import Navigation from 'components/navigation';
 import {HeaderContainer, MainHeader} from 'styles/typography/header';
 import {SITE_TITLE} from 'constants/config';
 
@@ -12,7 +12,7 @@ const Header = () => {
           <MainHeader>{SITE_TITLE}</MainHeader>
         </a>
       </Link>
-      <Nav />
+      <Navigation />
     </HeaderContainer>
   );
 };

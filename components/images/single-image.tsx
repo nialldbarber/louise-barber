@@ -7,9 +7,10 @@ interface SingleImageProps extends ImageGridProps {
 
 const SingleImage: FC<SingleImageProps> = ({img, title}) => {
   return (
-    <>
+    <picture>
+      <source type="image/avif" srcSet={img} />
       <img src={img} alt={`An image titled ${title}`} />
-    </>
+    </picture>
   );
 };
 

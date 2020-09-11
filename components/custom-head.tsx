@@ -18,8 +18,12 @@ const CustomHead: FC<HeadTitle> = ({title, description}) => {
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/static/favicon.ico" />
-      <link
+      {/* <link
         href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+        rel="stylesheet"
+      ></link> */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap"
         rel="stylesheet"
       ></link>
     </Head>
