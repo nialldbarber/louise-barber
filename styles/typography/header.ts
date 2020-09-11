@@ -33,7 +33,7 @@ const HeaderContainer = styled.header`
           position: relative;
           padding: 1rem;
           color: ${({theme}) => theme?.colors?.white};
-          font-size: 2rem;
+          font-size: clamp(1.5rem, 2.5vw, 2rem);
 
           &:hover {
             &:after,
@@ -68,7 +68,7 @@ const HeaderContainer = styled.header`
 
 const MainHeader = styled.h1`
   margin: 0;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   color: ${({theme}) => theme?.colors?.black};
   text-align: center;
 `;

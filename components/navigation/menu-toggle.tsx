@@ -18,10 +18,14 @@ type MenuToggleProps = {
 };
 
 const MenuToggle: FC<MenuToggleProps> = ({className}) => {
-  const {toggleMenu} = useStore();
+  const {isMenuOpen, toggleMenu} = useStore();
 
   return (
-    <Button className={`menu-toggle ${className || ''}`} action={toggleMenu}>
+    <Button
+      className={`menu-toggle ${className || ''}`}
+      toggledState={isMenuOpen}
+      action={toggleMenu}
+    >
       <svg width="23" height="23" viewBox="0 0 23 23">
         <Path
           d="M 2 2.5 L 20 2.5"

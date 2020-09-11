@@ -1,6 +1,5 @@
 import React, {FC, CSSProperties} from 'react';
 import Link from 'next/link';
-import {motion} from 'framer-motion';
 import SingleImage from 'components/images/single-image';
 import {ART_PAGE} from 'constants/config';
 

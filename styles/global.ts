@@ -2,14 +2,6 @@ import {createGlobalStyle} from 'styled-components';
 import {noBorderMixin, noMarginOrPaddingMixin} from 'styles/mixins';
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'CocogooseProSemilight';
-    src: url('/fonts/CocogooseProSemilight-trial.ttf');
-    font-weight: 500;
-    font-display: auto;
-    font-style: normal;
-  }
-
   * {
     box-sizing: border-box;
     text-rendering: optimizeLegibility;
