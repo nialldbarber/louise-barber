@@ -12,8 +12,13 @@ const Path: FC = (props) => (
   />
 );
 
-export const MenuToggle: FC = ({toggle}) => (
-  <Button action={toggle}>
+interface MenuToggleProps {
+  toggle: () => void;
+  className: string;
+}
+
+const MenuToggle: FC<MenuToggleProps> = ({toggle, className}) => (
+  <Button className={`menu-toggle ${className || ''}`} action={toggle}>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         d="M 2 2.5 L 20 2.5"

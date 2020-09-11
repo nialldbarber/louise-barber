@@ -1,8 +1,8 @@
-type Items = {
+export interface Items {
   id: number;
   href: string;
   page: string;
-};
+}
 
 export const navItems: Array<Items> = [
   {id: 1, href: '/', page: 'Home'},

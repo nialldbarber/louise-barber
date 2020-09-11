@@ -4,10 +4,12 @@ import {FooterContainer} from 'styles/components/footer';
 import {SITE_TITLE} from 'constants/config';
 
 const Footer: FC = () => {
+  const year = getCurrentYear();
+
   return (
     <FooterContainer>
       <p>
-        @ {SITE_TITLE} {getCurrentYear()}
+        @ {SITE_TITLE} {year}
       </p>
     </FooterContainer>
   );

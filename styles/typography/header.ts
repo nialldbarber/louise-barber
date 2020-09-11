@@ -8,20 +8,32 @@ const HeaderContainer = styled.header`
   height: ${({theme}) => theme?.dimensions?.headerHeight};
   padding-top: 2.5rem;
 
+  a {
+    z-index: 3;
+  }
+
   nav {
-    ${flexCenterMixin};
     position: absolute;
-    top: 2.5rem;
+    top: 0;
+    left: 0;
     bottom: 0;
-    right: 2rem;
+    right: 0;
 
     ul {
-      display: flex;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      display: grid;
+      grid-gap: 30px;
+      text-align: center;
+      transform: translate(-50%, -50%);
 
       li {
         a {
           position: relative;
           padding: 1rem;
+          color: ${({theme}) => theme?.colors?.white};
+          font-size: 2rem;
 
           &:hover {
             &:after,

@@ -54,6 +54,36 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: auto;
   }
+
+  .main-nav {
+    z-index: 2;
+
+    button {
+      &.open {  
+        svg {
+          path {
+            stroke: ${({theme}) => theme?.colors?.white};
+          }
+        }
+      }
+    }
+  }
+
+  .nav-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: ${({theme}) => theme?.colors?.black};
+  }
+
+  .menu-toggle {
+    position: absolute;
+    right: 2rem;
+    top: 3.3rem;
+    background: none;
+  }
 `;
 
 export {GlobalStyle};
