@@ -59,6 +59,13 @@ const GlobalStyle = createGlobalStyle`
     z-index: 2;
 
     button {
+      svg {
+        path {
+          stroke: ${({theme}) => theme?.colors?.black};
+          transition: .45s ease;
+        }
+      }
+
       &.open {  
         svg {
           path {
@@ -81,7 +88,7 @@ const GlobalStyle = createGlobalStyle`
   .menu-toggle {
     position: absolute;
     right: 2rem;
-    top: 3.3rem;
+    top: 3.1rem;
     background: none;
   }
 `;

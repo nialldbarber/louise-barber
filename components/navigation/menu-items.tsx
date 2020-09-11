@@ -12,15 +12,11 @@ const variants = {
   },
 };
 
-export interface MenuItemsProps {
-  closeMenu: () => void;
-}
-
-const MenuItems: FC<MenuItemsProps> = ({closeMenu}) => {
+const MenuItems: FC = () => {
   return (
     <motion.ul variants={variants}>
       {navItems.map(({id, href, page}) => (
-        <SingleMenuItem id={id} href={href} page={page} closeMenu={closeMenu} />
+        <SingleMenuItem id={id} href={href} page={page} />
       ))}
     </motion.ul>
   );

@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import Link from 'next/link';
 import {motion} from 'framer-motion';
+import useStore from 'state/store';
 import {Items} from 'constants/config';
 
 const variants = {
@@ -20,16 +21,9 @@ const variants = {
   },
 };
 
-export interface SingleMenuItemProps extends Items {
-  closeMenu: () => void;
-}
+const SingleMenuItem: FC<Items> = ({id, href, page}) => {
+  const {closeMenu} = useStore();
 
-const SingleMenuItem: FC<SingleMenuItemProps> = ({
-  id,
-  href,
-  page,
-  closeMenu,
-}) => {
   return (
     <motion.li key={id} variants={variants}>
       <Link href={href}>

@@ -1,5 +1,6 @@
 import React, {FC, useRef} from 'react';
-import {motion, useCycle} from 'framer-motion';
+import {motion} from 'framer-motion';
+import useStore from 'state/store';
 import useDimensions from 'hooks/useDimensions';
 import MenuToggle from 'components/navigation/menu-toggle';
 import MenuItems from 'components/navigation/menu-items';
@@ -25,28 +26,22 @@ const sidebar = {
 };
 
 const Nav: FC = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
+  const {isMenuOpen} = useStore();
   const containerRef = useRef<HTMLInputElement>(null);
   const {height} = useDimensions(containerRef);
-
-  const closeMenu = () => {
-    console.log('HELLO');
-    toggleOpen();
-  }
-
-  const isMenuOpen: string = isOpen ? 'open' : 'closed';
+  const menuOpen: string = isMenuOpen ? 'open' : 'closed';
 
   return (
     <motion.nav
       initial={false}
-      animate={isMenuOpen}
+      animate={menuOpen}
       custom={height}
       ref={containerRef}
       className="main-nav"
     >
       <motion.div className="nav-background" variants={sidebar} />
-      <MenuItems closeMenu={closeMenu} />
-      <MenuToggle className={isMenuOpen} toggle={() => toggleOpen()} />
+      <MenuItems />
+      <MenuToggle className={menuOpen} />
     </motion.nav>
   );
 };

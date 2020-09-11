@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {getCurrentYear} from 'utils/site-config';
 import {FooterContainer} from 'styles/components/footer';
-import {SITE_TITLE} from 'constants/config';
+import {FOOTER_TITLE} from 'constants/config';
 
 const Footer: FC = () => {
   const year = getCurrentYear();
@@ -9,7 +9,7 @@ const Footer: FC = () => {
   return (
     <FooterContainer>
       <p>
-        @ {SITE_TITLE} {year}
+        @ {FOOTER_TITLE} {year}
       </p>
     </FooterContainer>
   );
