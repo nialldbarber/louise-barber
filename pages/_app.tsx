@@ -19,7 +19,6 @@ const App: FC<AppProps> = ({Component, pageProps}) => {
       <AnimatePresence exitBeforeEnter>
         <main>
           <Component {...pageProps} />
-          {/* <button onClick={toggleTheme}>+</button> */}
         </main>
       </AnimatePresence>
       <Footer />

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {flexCenterMixin} from 'styles/mixins';
+import {flexCenterMixin, titleClamp} from 'styles/mixins';
 
 const HeaderContainer = styled.header`
   ${flexCenterMixin};
@@ -33,7 +33,7 @@ const HeaderContainer = styled.header`
           position: relative;
           padding: 1rem;
           color: ${({theme}) => theme?.colors?.white};
-          font-size: clamp(1.5rem, 2.5vw, 2rem);
+          ${titleClamp};
 
           &:hover {
             &:after,
@@ -68,7 +68,7 @@ const HeaderContainer = styled.header`
 
 const MainHeader = styled.h1`
   margin: 0;
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  ${titleClamp};
   color: ${({theme}) => theme?.colors?.black};
   text-align: center;
 `;

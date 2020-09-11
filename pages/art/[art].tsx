@@ -39,7 +39,6 @@ export const getServerSideProps: GetServerSideProps = async (
   ctx: GetServerSidePropsContext
 ) => {
   const {art} = ctx.query;
-  // console.log(ctx.query);
   const entry: any = await client.getEntry(`${art}`);
   const imgId = entry.fields.mainImage[0].sys.id;
   const asset = await client.getAsset(imgId);

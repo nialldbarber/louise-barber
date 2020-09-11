@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     ${noMarginOrPaddingMixin};
-    font-family: 'Ubuntu', sans-serif;
+    font-family: ${({theme}) => theme?.font?.main};
     font-size: 16px;
     line-height: 1.15;
     color: ${({theme}) => theme?.colors?.black};
@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
         }
       }
 
-      &.open {  
+      &.open {        
         svg {
           path {
             stroke: ${({theme}) => theme?.colors?.white};

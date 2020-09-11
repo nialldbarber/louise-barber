@@ -37,7 +37,7 @@ const Nav: FC = () => {
       animate={menuOpen}
       custom={height}
       ref={containerRef}
-      className="main-nav"
+      className={`main-nav ${menuOpen}`}
     >
       <motion.div className="nav-background" variants={sidebar} />
       <MenuItems />
