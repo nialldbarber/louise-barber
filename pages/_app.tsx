@@ -10,7 +10,7 @@ const App: FC<AppProps> = ({Component, pageProps, router}) => {
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
       <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} key={router.route} />
+        <Component {...pageProps} />
       </AnimatePresence>
     </ThemeProvider>
   );

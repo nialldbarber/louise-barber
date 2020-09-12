@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {motion} from 'framer-motion';
+import useStore from 'state/store';
 import SingleMenuItem from 'components/navigation/single-menu-item';
 import {navItems} from 'constants/site-config';
 
@@ -13,8 +14,10 @@ const variants = {
 };
 
 const MenuItems: FC = () => {
+  const {isMenuOpen} = useStore();
+
   return (
-    <motion.ul variants={variants} style={{zIndex: 999}}>
+    <motion.ul variants={variants} style={{zIndex: isMenuOpen ? 999 : -1}}>
       {navItems.map(({id, href, page}) => (
         <SingleMenuItem id={id} href={href} page={page} />
       ))}
