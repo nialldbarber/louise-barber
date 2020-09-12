@@ -2,26 +2,16 @@ import React, {FC} from 'react';
 import type {AppProps} from 'next/app';
 import {ThemeProvider} from 'styled-components';
 import {AnimatePresence} from 'framer-motion';
-import useDarkMode from 'hooks/useDarkMode';
-import {getThemeMode} from 'utils/site-config';
-import Header from 'components/header';
-import Footer from 'components/footer';
 import {GlobalStyle} from 'styles/global';
+import {lightTheme} from 'styles/style-state';
 
-const App: FC<AppProps> = ({Component, pageProps}) => {
-  const {theme, toggleTheme} = useDarkMode();
-  const themeMode = getThemeMode(theme);
-
+const App: FC<AppProps> = ({Component, pageProps, router}) => {
   return (
-    <ThemeProvider theme={themeMode}>
+    <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
-      <Header />
       <AnimatePresence exitBeforeEnter>
-        <main>
-          <Component {...pageProps} />
-        </main>
+        <Component {...pageProps} key={router.route} />
       </AnimatePresence>
-      <Footer />
     </ThemeProvider>
   );
 };

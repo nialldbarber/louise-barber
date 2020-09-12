@@ -1,29 +1,11 @@
 import React, {FC, useRef} from 'react';
-import {motion} from 'framer-motion';
+import {AnimatePresence} from 'framer-motion';
 import useStore from 'state/store';
 import useDimensions from 'hooks/useDimensions';
 import MenuToggle from 'components/navigation/menu-toggle';
 import MenuItems from 'components/navigation/menu-items';
-
-const sidebar = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-    transition: {
-      type: 'spring',
-      stiffness: 20,
-      restDelta: 2,
-    },
-  }),
-  closed: {
-    clipPath: 'circle(0px at 40px 40px)',
-    transition: {
-      delay: 0.1,
-      type: 'spring',
-      stiffness: 400,
-      damping: 40,
-    },
-  },
-};
+import Panels from 'components/navigation/panels';
+import {MainNav} from 'styles/components/navigation';
 
 const Nav: FC = () => {
   const {isMenuOpen} = useStore();
@@ -32,19 +14,17 @@ const Nav: FC = () => {
   const menuOpen: string = isMenuOpen ? 'open' : 'closed';
 
   return (
-    <motion.nav
+    <MainNav
       initial={false}
       animate={menuOpen}
       custom={height}
       ref={containerRef}
-      className={`main-nav ${menuOpen}`}
+      className={menuOpen}
     >
-      <div className="nav-inner-wrapper">
-        <motion.div className="nav-background" variants={sidebar} />
-        <MenuItems />
-        <MenuToggle className={menuOpen} />
-      </div>
-    </motion.nav>
+      <AnimatePresence>{isMenuOpen && <Panels />}</AnimatePresence>
+      <MenuItems />
+      <MenuToggle className={menuOpen} />
+    </MainNav>
   );
 };
 

@@ -47,38 +47,6 @@ const GlobalStyle = createGlobalStyle`
     height: auto;
   }
 
-  .main-nav {
-    /* z-index: 2; */
-
-    &.open {
-      z-index: 5;
-      transition: .45s ease;
-    }
-
-    &.closed {
-      ul {
-        z-index: -1;
-      }
-    }
-
-    button {
-      svg {
-        path {
-          stroke: ${({theme}) => theme?.colors?.black};
-          transition: .45s ease;
-        }
-      }
-
-      &.open {
-        svg {
-          path {
-            stroke: ${({theme}) => theme?.colors?.white};
-          }
-        }
-      }
-    }
-  }
-
   .nav-background {
     position: fixed;
     top: 0;
@@ -86,13 +54,6 @@ const GlobalStyle = createGlobalStyle`
     bottom: 0;
     right: 0;
     background: ${({theme}) => theme?.colors?.black};
-  }
-
-  .menu-toggle {
-    position: absolute;
-    right: 2rem;
-    top: 3.1rem;
-    background: none;
   }
 `;
 

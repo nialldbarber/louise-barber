@@ -32,6 +32,14 @@ const Btn = styled.button`
       }
     }
   }
+
+  &.menu-toggle {
+    position: absolute;
+    right: 2rem;
+    top: 3.1rem;
+    background: none;
+    z-index: 12;
+  }
 `;
 
 export {Btn};
