@@ -18,8 +18,8 @@ const Home: NextPage<Entries> = (entries) => {
         <CustomHead title="Home" />
         <motion.div
           initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          exit={{opacity: 0}}
+          animate={{opacity: 1, transition: {delay: 0.1}}}
+          exit={{opacity: 0, transition: {delay: 0.1}}}
         >
           <PageLayout>
             <ImageGrid>

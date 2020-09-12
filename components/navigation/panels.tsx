@@ -8,13 +8,6 @@ const transition = {duration: 0.8, ease: [0.6, -0.05, 0.01, 0.9]};
 
 // Modified from: https://www.youtube.com/watch?v=qvFLjZvz5Mw&ab_channel=WrongAkram
 const Panels: FC<PanelsProps> = () => {
-  useEffect(() => {
-    console.log('Mounted');
-    return () => {
-      console.log('Unmounted');
-    };
-  }, []);
-
   return (
     <motion.div>
       <LeftPanelBg
