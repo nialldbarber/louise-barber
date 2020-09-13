@@ -9,7 +9,7 @@ const Footer: FC = () => {
   return (
     <FooterContainer>
       <p>
-        @ {TITLE.FOOTER} {year}
+        {TITLE.FOOTER} {year}
       </p>
     </FooterContainer>
   );

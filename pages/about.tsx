@@ -16,7 +16,7 @@ const About: NextPage = () => {
             exit={{opacity: 0, transition: {delay: 0.1}}}
           >
             <h2>About page</h2>
-            <p>Test</p>
+            <p>This is the about page.</p>
           </motion.div>
         </PageLayout>
       </>

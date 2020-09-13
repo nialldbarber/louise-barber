@@ -5,7 +5,7 @@ import {AnimatePresence} from 'framer-motion';
 import {GlobalStyle} from 'styles/global';
 import {lightTheme} from 'styles/style-state';
 
-const App: FC<AppProps> = ({Component, pageProps, router}) => {
+const App: FC<AppProps> = ({Component, pageProps}) => {
   return (
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />

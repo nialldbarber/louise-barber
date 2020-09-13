@@ -1,13 +1,14 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC} from 'react';
 import {motion} from 'framer-motion';
+import useBodyLock from 'hooks/useBodyLock';
 import {LeftPanelBg, RightPanelBg} from 'styles/components/navigation';
-
-interface PanelsProps {}
 
 const transition = {duration: 0.8, ease: [0.6, -0.05, 0.01, 0.9]};
 
 // Modified from: https://www.youtube.com/watch?v=qvFLjZvz5Mw&ab_channel=WrongAkram
-const Panels: FC<PanelsProps> = () => {
+const Panels: FC = () => {
+  useBodyLock();
+
   return (
     <motion.div>
       <LeftPanelBg

@@ -25,7 +25,7 @@ const SingleMenuItem: FC<Items> = ({id, href, page}) => {
   const {closeMenu} = useStore();
 
   return (
-    <motion.li key={id} variants={variants}>
+    <motion.li variants={variants}>
       <Link href={href}>
         <a onClick={closeMenu}>{page}</a>
       </Link>

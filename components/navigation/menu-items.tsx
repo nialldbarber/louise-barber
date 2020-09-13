@@ -19,7 +19,7 @@ const MenuItems: FC = () => {
   return (
     <motion.ul variants={variants} style={{zIndex: isMenuOpen ? 999 : -1}}>
       {navItems.map(({id, href, page}) => (
-        <SingleMenuItem id={id} href={href} page={page} />
+        <SingleMenuItem key={id} id={id} href={href} page={page} />
       ))}
     </motion.ul>
   );

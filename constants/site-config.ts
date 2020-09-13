@@ -13,6 +13,6 @@ export const ART_PAGE: string = '/art/';
 
 export enum TITLE {
   MAIN = 'Louise Hannah Barber',
-  FOOTER = 'LHB',
+  FOOTER = '© LHB',
   DESC = 'Art by Louise Barber',
 }
