@@ -1,4 +1,5 @@
 import React, {FC, ReactChild, useState} from 'react';
+import useStore from 'state/store';
 import {Btn} from 'styles/components/button';
 import {LoaderSpinner} from 'styles/components/loader';
 
@@ -22,6 +23,7 @@ const Button: FC<ButtonProps> = ({
   children,
 }) => {
   const [active, setActive] = useState<boolean>(false);
+  const {showHoveredCursor, hideHoveredCursor} = useStore();
 
   return (
     <Btn
@@ -33,6 +35,8 @@ const Button: FC<ButtonProps> = ({
         setActive(!active);
         action && action();
       }}
+      onMouseEnter={showHoveredCursor}
+      onMouseLeave={hideHoveredCursor}
     >
       <span className={`${active ? 'active' : ''}`}>{text || ''}</span>
       {children || ''}

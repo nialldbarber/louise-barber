@@ -21,13 +21,19 @@ const variants = {
   },
 };
 
-const SingleMenuItem: FC<Items> = ({id, href, page}) => {
-  const {closeMenu} = useStore();
+const SingleMenuItem: FC<Items> = ({href, page}) => {
+  const {showHoveredCursor, hideHoveredCursor, closeMenu} = useStore();
 
   return (
     <motion.li variants={variants}>
       <Link href={href}>
-        <a onClick={closeMenu}>{page}</a>
+        <a
+          onClick={closeMenu}
+          onMouseEnter={showHoveredCursor}
+          onMouseLeave={hideHoveredCursor}
+        >
+          {page}
+        </a>
       </Link>
     </motion.li>
   );

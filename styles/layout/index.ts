@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import {motion} from 'framer-motion';
 import {flexCenterMixin} from 'styles/mixins';
 
-const PageLayout = styled.section`
+const PageLayout = styled(motion.section)`
   margin: 0 auto;
   padding: 5rem 2rem 3rem;
   max-width: ${({theme}) => theme?.dimensions?.maxWidth};

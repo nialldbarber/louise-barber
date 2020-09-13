@@ -9,8 +9,8 @@ const useMousePosition = () => {
   useEffect(() => {
     const handlePosition = (e: any): void => {
       setMousePosition({
-        x: e.pageX,
-        y: e.pageY,
+        x: e?.pageX,
+        y: e?.pageY,
       });
     };
 

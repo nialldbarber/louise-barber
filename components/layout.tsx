@@ -1,33 +1,44 @@
 import React, {FC, ReactChild} from 'react';
-import styled from 'styled-components';
-import {motion} from 'framer-motion';
+import useStore from 'state/store';
+import useMousePosition from 'hooks/useMousePosition';
+import CustomHead from 'components/custom-head';
 import Header from 'components/header';
 import Footer from 'components/footer';
+import {PageLayout} from 'styles/layout';
+import {Cursor} from 'styles/components/cursor';
 
-type MainLayoutProps = {children: ReactChild};
+interface MainLayoutProps {
+  title?: string;
+  children: ReactChild;
+}
 
-const Cursor = styled(motion.div)`
-  cursor: pointer;
-  height: 2.5rem;
-  width: 2.5rem;
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  /* background-color: #e7dede; */
-  border: 1px solid #111;
-  border-radius: 100%;
-  pointer-events: none;
-`;
+const MainLayout: FC<MainLayoutProps> = ({title, children}) => {
+  const {isHovered, isMenuOpen} = useStore();
+  const {x, y} = useMousePosition();
 
-const MainLayout: FC<MainLayoutProps> = ({children}) => {
   return (
     <>
-      {/* <Cursor
-        animate={{x: x - 15, y: y - 15}}
-        transition={{ease: 'linear', duration: 0.3}}
-      /> */}
       <Header />
-      <main>{children}</main>
+      <Cursor
+        animate={{
+          x: x - 16,
+          y: y - 16,
+          scale: isHovered ? 1.2 : 1,
+          opacity: isHovered ? 0.8 : 0 ?? 0,
+        }}
+        transition={{ease: 'linear', duration: 0.2, times: [0, 0.2, 1]}}
+        mode={isMenuOpen}
+      />
+      <main>
+        <CustomHead title={`Art | ${title}`} />
+        <PageLayout
+          initial={{opacity: 0}}
+          animate={{opacity: 1, transition: {delay: 0.1}}}
+          exit={{opacity: 0, transition: {delay: 0.1}}}
+        >
+          {children}
+        </PageLayout>
+      </main>
       <Footer />
     </>
   );
