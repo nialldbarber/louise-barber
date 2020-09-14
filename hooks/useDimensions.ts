@@ -1,8 +1,8 @@
 import {useEffect, useRef} from 'react';
 
 interface Dimensions {
-  width: number;
-  height: number;
+  width: number | null;
+  height: number | null;
 }
 
 interface Ref {

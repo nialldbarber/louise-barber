@@ -1,13 +1,18 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, MouseEvent} from 'react';
 
-const useMousePosition = () => {
-  const [mousePosition, setMousePosition] = useState({
+interface Dimensions {
+  x: number | null;
+  y: number | null;
+}
+
+const useMousePosition = (): Dimensions => {
+  const [mousePosition, setMousePosition] = useState<Dimensions>({
     x: null,
     y: null,
   });
 
   useEffect(() => {
-    function handlePosition(e: any): void {
+    function handlePosition(e: MouseEvent<Element, MouseEvent>): void {
       setMousePosition({
         x: e?.pageX,
         y: e?.pageY,
