@@ -11,8 +11,8 @@ type Art = {asset: MainImages};
 
 const ArtPage: NextPage<Art> = ({asset}) => {
   const {title, file} = asset?.fields;
-  const img = getProgressiveImage(file?.url);
-  const maxWidth = file?.details?.image?.width;
+  const img: string = getProgressiveImage(file?.url);
+  const maxWidth: number = file?.details?.image?.width;
   return (
     <MainLayout title={`Art | ${title}`}>
       <ImageContainer>
