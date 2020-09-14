@@ -14,14 +14,16 @@ export interface ImageGridProps {
 const Images: FC<ImageGridProps> = ({id, url, title}) => {
   return id && url ? (
     <Link href={`${ART_PAGE}[id]`} as={`${ART_PAGE}${id}`}>
-      <CursorLink>
-        <>
-          {<SingleImage img={url} title={title} /> ?? null}
-          <div className="title-container">
-            <p className="image-title">{title || ''}</p>
-          </div>
-        </>
-      </CursorLink>
+      <a>
+        <CursorLink>
+          <>
+            {<SingleImage img={url} title={title} /> ?? null}
+            <div className="title-container">
+              <p className="image-title">{title || ''}</p>
+            </div>
+          </>
+        </CursorLink>
+      </a>
     </Link>
   ) : null;
 };
