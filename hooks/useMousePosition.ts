@@ -7,12 +7,12 @@ const useMousePosition = () => {
   });
 
   useEffect(() => {
-    const handlePosition = (e: any): void => {
+    function handlePosition(e: any): void {
       setMousePosition({
         x: e?.pageX,
         y: e?.pageY,
       });
-    };
+    }
 
     window.addEventListener('mousemove', handlePosition);
 

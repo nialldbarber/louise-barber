@@ -5,18 +5,18 @@ import {LIGHT_MODE, DARK_MODE, THEME} from 'constants/theme';
 const useDarkMode = () => {
   const [theme, setTheme] = useState<string>('');
 
-  const setMode = (mode: string) => {
+  function setMode(mode: string): void {
     window.localStorage.setItem(THEME, mode);
     setTheme(mode);
-  };
+  }
 
-  const toggleTheme = () => {
+  function toggleTheme(): void {
     if (theme === LIGHT_MODE) {
       setMode(DARK_MODE);
     } else {
       setMode(LIGHT_MODE);
     }
-  };
+  }
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem(THEME);
