@@ -1,12 +1,12 @@
 import create from 'zustand';
 
 type State = {
-  isHovered?: boolean;
-  isMenuOpen?: boolean;
-  showHoveredCursor?: () => void;
-  hideHoveredCursor?: () => void;
-  toggleMenu?: () => void;
-  closeMenu?: () => void;
+  isHovered: boolean;
+  isMenuOpen: boolean;
+  showHoveredCursor: () => void;
+  hideHoveredCursor: () => void;
+  toggleMenu: () => void;
+  closeMenu: () => void;
 };
 
 const useStore = create<State>((set) => ({

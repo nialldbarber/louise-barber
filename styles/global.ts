@@ -19,11 +19,12 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.15;
     color: ${({theme}) => theme?.colors?.black};
     background: ${({theme}) => theme?.colors?.white};
-  } 
+  }
 
   a {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
   }
 
   ul {

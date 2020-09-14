@@ -21,9 +21,9 @@ const MainLayout: FC<MainLayoutProps> = ({title, children}) => {
       <Header />
       <Cursor
         animate={{
-          x: x - 16,
-          y: y - 16,
-          scale: isHovered ? 1.2 : 1,
+          x: (x ?? -100) - 16,
+          y: (y ?? -100) - 16,
+          scale: isHovered ? 1.2 : 0.3,
           opacity: isHovered ? 0.8 : 0 ?? 0,
         }}
         transition={{ease: 'linear', duration: 0.2, times: [0, 0.2, 1]}}

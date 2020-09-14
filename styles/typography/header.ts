@@ -33,7 +33,7 @@ const HeaderContainer = styled.header`
           position: relative;
           padding: 1rem;
           color: ${({theme}) => theme?.colors?.white};
-          ${titleClamp};
+          font-size: clamp(1.5rem, 4.5vw, 3rem);
 
           &:hover {
             &:after,

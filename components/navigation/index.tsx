@@ -6,13 +6,13 @@ import MenuToggle from 'components/navigation/menu-toggle';
 import MenuItems from 'components/navigation/menu-items';
 import Panels from 'components/navigation/panels';
 import {MainNav} from 'styles/components/navigation';
-import {OPEN, CLOSED} from 'constants/theme';
+import {MENU} from 'constants/theme';
 
 const Nav: FC = () => {
   const containerRef = useRef<HTMLInputElement>(null);
   const {isMenuOpen} = useStore();
   const {height} = useDimensions(containerRef);
-  const menuOpen: string = isMenuOpen ? OPEN : CLOSED;
+  const menuOpen: string = isMenuOpen ? MENU.OPEN : MENU.CLOSED;
 
   return (
     <MainNav

@@ -1,16 +1,11 @@
+import {NextPage} from 'next';
 import Link from 'next/link';
-import styled from 'styled-components';
 import MainLayout from 'components/layout';
 import Button from 'components/button';
 import {Layout404} from 'styles/pages/404';
+import {BackHomeBtn} from 'styles/components/button';
 
-const BackHomeBtn = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Custom404 = () => {
+const Custom404: NextPage = () => {
   return (
     <MainLayout>
       <Layout404>

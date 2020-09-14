@@ -28,7 +28,10 @@ const SingleMenuItem: FC<Items> = ({href, page}) => {
     <motion.li variants={variants}>
       <Link href={href}>
         <a
-          onClick={closeMenu}
+          onClick={() => {
+            closeMenu();
+            hideHoveredCursor();
+          }}
           onMouseEnter={showHoveredCursor}
           onMouseLeave={hideHoveredCursor}
         >

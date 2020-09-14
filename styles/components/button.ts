@@ -42,4 +42,10 @@ const Btn = styled.button`
   }
 `;
 
-export {Btn};
+const BackHomeBtn = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export {Btn, BackHomeBtn};
