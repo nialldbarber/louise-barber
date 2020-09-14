@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {lighten} from 'polished';
+import {flexCenterMixin} from 'styles/mixins';
 
 const Btn = styled.button`
   &.standard {
@@ -16,7 +17,7 @@ const Btn = styled.button`
     color: ${({theme}) => theme?.colors?.white};
     white-space: nowrap;
     border-radius: 4px;
-    transition: 0.2s cubic-bezier(0, 0, 1, 1);
+    transition: 0.2s ${({theme}) => theme?.animation?.btn};
 
     &:hover {
       background-color: ${lighten(0.1, '#111')};
@@ -25,7 +26,7 @@ const Btn = styled.button`
 
     span {
       padding-right: 0;
-      transition: 0.2s cubic-bezier(0, 0, 1, 1);
+      transition: 0.2s ${({theme}) => theme?.animation?.btn};
 
       &.active {
         padding-right: 1rem;
@@ -35,17 +36,15 @@ const Btn = styled.button`
 
   &.menu-toggle {
     position: absolute;
-    right: 2rem;
     top: 3.1rem;
+    right: 2rem;
     background: none;
     z-index: 12;
   }
 `;
 
 const BackHomeBtn = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${flexCenterMixin};
 `;
 
 export {Btn, BackHomeBtn};

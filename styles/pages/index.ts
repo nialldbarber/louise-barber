@@ -44,13 +44,13 @@ const ImageGrid = styled.div`
         top: 70%;
         left: 50%;
         transform: translateX(-50%);
-        transition: 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: 0.25s ${({theme}) => theme?.animation?.swoop};
       }
     }
 
     img {
       transform: scale(1);
-      transition: 0.575s cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition: 0.575s ${({theme}) => theme?.animation?.swoop};
     }
 
     &:after {
@@ -73,7 +73,7 @@ const ImageGrid = styled.div`
 
       &:after {
         opacity: 0.8;
-        transition: 0.475s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: 0.475s ${({theme}) => theme?.animation?.swoop};
       }
     }
   }

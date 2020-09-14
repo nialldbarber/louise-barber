@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import {flexCenterMixin} from 'styles/mixins';
+import {flexCenterMixin, fullSpacedMixin, positionCenter} from 'styles/mixins';
 
 const HeaderContainer = styled.header`
   ${flexCenterMixin};
   position: relative;
-  background: ${({theme}) => theme?.colors?.white};
   height: ${({theme}) => theme?.dimensions?.headerHeight};
+  background: ${({theme}) => theme?.colors?.white};
   padding-top: 2.5rem;
 
   a {
@@ -14,26 +14,21 @@ const HeaderContainer = styled.header`
 
   nav {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    ${fullSpacedMixin};
 
     ul {
+      ${positionCenter};
       position: fixed;
-      top: 50%;
-      left: 50%;
       display: grid;
       grid-gap: 30px;
       text-align: center;
-      transform: translate(-50%, -50%);
 
       li {
         a {
           position: relative;
           padding: 1rem;
-          color: ${({theme}) => theme?.colors?.white};
           font-size: clamp(1.5rem, 4.5vw, 3rem);
+          color: ${({theme}) => theme?.colors?.white};
 
           &:hover {
             &:after,

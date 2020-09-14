@@ -1,18 +1,8 @@
 import styled, {css} from 'styled-components';
 import {motion} from 'framer-motion';
+import {fullSpacedMixin} from 'styles/mixins';
 
 const MainNav = styled(motion.nav)`
-  /* &.open {
-    z-index: 5;
-    transition: 2s ease;
-  }
-
-  &.closed {
-    ul {
-      z-index: -1;
-    }
-  } */
-
   button {
     svg {
       path {
@@ -33,10 +23,7 @@ const MainNav = styled(motion.nav)`
 
 const NavBackground = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  ${fullSpacedMixin};
   background: ${({theme}) => theme?.colors?.black};
 `;
 

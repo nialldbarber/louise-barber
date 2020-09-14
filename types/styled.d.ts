@@ -8,6 +8,7 @@ declare module 'styled-components' {
     colors?: {
       black?: string;
       white?: string;
+      offWhite?: string;
       purple?: string;
     };
     dimensions?: {
@@ -17,6 +18,7 @@ declare module 'styled-components' {
     };
     animation: {
       swoop?: string;
+      btn?: string;
     };
   }
 }
