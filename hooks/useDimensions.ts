@@ -18,8 +18,6 @@ const useDimensions = (ref: Ref): Dimensions => {
     dimensions.current.height = ref.current.offsetHeight;
   }, []);
 
-  console.log(ref);
-
   return dimensions.current;
 };
 
