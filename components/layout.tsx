@@ -4,7 +4,7 @@ import useMousePosition from 'hooks/useMousePosition';
 import CustomHead from 'components/custom-head';
 import Header from 'components/header';
 import Footer from 'components/footer';
-import {PageLayout} from 'styles/layout';
+import {PageLayout, Main} from 'styles/layout';
 import {Cursor} from 'styles/components/cursor';
 
 interface MainLayoutProps {
@@ -29,7 +29,7 @@ const MainLayout: FC<MainLayoutProps> = ({title, children}) => {
         transition={{ease: 'linear', duration: 0.2, times: [0, 0.2, 1]}}
         mode={isMenuOpen}
       />
-      <main>
+      <Main>
         <CustomHead title={`Art | ${title}`} />
         <PageLayout
           initial={{opacity: 0}}
@@ -38,7 +38,7 @@ const MainLayout: FC<MainLayoutProps> = ({title, children}) => {
         >
           {children}
         </PageLayout>
-      </main>
+      </Main>
       <Footer />
     </>
   );

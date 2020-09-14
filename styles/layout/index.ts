@@ -12,10 +12,14 @@ const PageLayout = styled(motion.section)`
   );
 `;
 
+const Main = styled.main`
+  padding-bottom: 2rem;
+`;
+
 const ImageContainer = styled.div`
   ${flexCenterMixin};
   margin: 0 auto;
   max-width: 70%;
 `;
 
-export {PageLayout, ImageContainer};
+export {PageLayout, Main, ImageContainer};
