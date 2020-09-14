@@ -12,7 +12,13 @@ export const navItems: Array<Items> = [
 export const ART_PAGE: string = '/art/';
 
 export enum TITLE {
-  MAIN = 'Louise Hannah Barber',
-  FOOTER = '© LHB',
+  MAIN = 'louise hannah barber',
+  FOOTER = '© lhb',
   DESC = 'Art by Louise Barber',
+}
+
+export enum INSTA {
+  URL = 'https://www.instagram.com/louhbarberart/',
+  IMG = '/instagram.svg',
+  ALT = 'Instagram Logo',
 }
