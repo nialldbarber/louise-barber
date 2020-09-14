@@ -27,6 +27,7 @@ const ImageGrid = styled.div`
     will-change: transform;
     overflow: hidden;
     transition: transform 0.5s;
+    z-index: 1;
 
     .title-container {
       position: absolute;

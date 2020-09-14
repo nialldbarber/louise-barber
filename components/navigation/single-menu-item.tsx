@@ -32,7 +32,7 @@ const SingleMenuItem: FC<Items> = ({href, page}) => {
     hideHoveredCursor();
     setTimeout(() => {
       router.push(href);
-    }, 1200);
+    }, 1000);
   }
 
   return (
