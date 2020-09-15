@@ -1,6 +1,7 @@
 import React, {FC, ReactChild} from 'react';
 import useStore from 'state/store';
 import useMousePosition from 'hooks/useMousePosition';
+import useDetectDevice from 'hooks/useDetectDevice';
 import CustomHead from 'components/custom-head';
 import Header from 'components/header';
 import Footer from 'components/footer';
@@ -15,20 +16,25 @@ interface MainLayoutProps {
 const MainLayout: FC<MainLayoutProps> = ({title, children}) => {
   const {isHovered, isMenuOpen} = useStore();
   const {x, y} = useMousePosition();
+  const {isMobile} = useDetectDevice();
+
+  console.log(isMobile);
 
   return (
     <>
       <Header />
-      <Cursor
-        animate={{
-          x: (x ?? -100) - 16,
-          y: (y ?? -100) - 16,
-          scale: isHovered ? 1.2 : 0.3,
-          opacity: isHovered ? 0.8 : 0 ?? 0,
-        }}
-        transition={{ease: 'linear', duration: 0.2, times: [0, 0.2, 1]}}
-        mode={isMenuOpen}
-      />
+      {isMobile ? null : (
+        <Cursor
+          animate={{
+            x: (x ?? -100) - 16,
+            y: (y ?? -100) - 16,
+            scale: isHovered ? 1.2 : 0.3,
+            opacity: isHovered ? 0.8 : 0 ?? 0,
+          }}
+          transition={{ease: 'linear', duration: 0.2, times: [0, 0.2, 1]}}
+          mode={isMenuOpen}
+        />
+      )}
       <Main>
         <CustomHead title={`Art | ${title}`} />
         <PageLayout
