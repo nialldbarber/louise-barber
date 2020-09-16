@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
+import useStore from 'state/store';
 import {getCurrentYear} from 'utils/site-config';
-import CursorLink from 'components/helpers/cursor-hover-links';
 import {FooterContainer, InstaIcon} from 'styles/components/footer';
 import {TITLE, INSTA} from 'constants/site-config';
 
 const Footer: FC = () => {
+  const {showHoveredCursor, hideHoveredCursor} = useStore();
   const year = getCurrentYear();
 
   return (
@@ -13,11 +14,16 @@ const Footer: FC = () => {
         {TITLE.FOOTER} {year}
       </p>
       <InstaIcon>
-        <CursorLink>
-          <a href={INSTA.URL} target="_blank" rel="noopener noreferrer">
-            <img src={INSTA.IMG} alt={INSTA.ALT} />
-          </a>
-        </CursorLink>
+        <a
+          href={INSTA.URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={hideHoveredCursor}
+          onMouseEnter={showHoveredCursor}
+          onMouseLeave={hideHoveredCursor}
+        >
+          <img src={INSTA.IMG} alt={INSTA.ALT} />
+        </a>
       </InstaIcon>
     </FooterContainer>
   );

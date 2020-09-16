@@ -3,15 +3,15 @@ import create from 'zustand';
 type State = {
   isHovered: boolean;
   isMenuOpen: boolean;
-  selectedImageId: null;
+  selectedImageId: string;
   showHoveredCursor: () => void;
   hideHoveredCursor: () => void;
   toggleMenu: () => void;
   closeMenu: () => void;
-  showSelectedId: () => void;
+  showSelectedId: (id: string) => void;
 };
 
-const useStore = create((set, get) => ({
+const useStore = create<State>((set) => ({
   // Hovered cursor
   isHovered: false,
   showHoveredCursor: () => set(() => ({isHovered: true})),
@@ -21,7 +21,7 @@ const useStore = create((set, get) => ({
   toggleMenu: () => set((state) => ({isMenuOpen: !state.isMenuOpen})),
   closeMenu: () => set(() => ({isMenuOpen: false})),
   // Selected image
-  selectedImageId: null,
+  selectedImageId: '',
   showSelectedId: (id: string) => set(() => ({selectedImageId: id})),
 }));
 

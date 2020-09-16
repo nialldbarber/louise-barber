@@ -46,7 +46,6 @@ const ImageGrid = styled.div`
         transform: translateX(-50%);
         transition: 0.25s ${({theme}) => theme?.animation?.swoop};
         font-size: 1.5rem;
-        font-weight: bold;
       }
     }
 

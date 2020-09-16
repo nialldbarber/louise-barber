@@ -6,7 +6,6 @@ const MainHeader = styled.h1`
   ${titleClamp};
   color: ${({theme}) => theme?.colors?.black};
   text-align: center;
-  font-weight: bold;
 `;
 
 export {MainHeader};

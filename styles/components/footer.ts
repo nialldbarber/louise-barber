@@ -20,7 +20,6 @@ const FooterContainer = styled.footer`
   p {
     margin: 0;
     font-size: 1rem;
-    font-weight: bold;
   }
 `;
 
