@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {motion} from 'framer-motion';
+
 import {ImageGridProps} from 'components/images';
 
 interface SingleImageProps extends ImageGridProps {

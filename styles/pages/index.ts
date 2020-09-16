@@ -77,6 +77,22 @@ const ImageGrid = styled.div`
         transition: 0.475s ${({theme}) => theme?.animation?.swoop};
       }
     }
+
+    &.mobile {
+      .title-container {
+        display: none;
+      }
+
+      &:after {
+        content: none;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1);
+        }
+      }
+    }
   }
 `;
 
