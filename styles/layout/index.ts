@@ -9,7 +9,7 @@ const PageLayout = styled(motion.section)`
   max-width: ${({theme}) => theme?.dimensions?.maxWidth};
   min-height: calc(
     100vh - ${({theme}) => theme?.dimensions?.headerHeight} -
-      ${({theme}) => theme?.dimensions?.footerHeight}
+      ${({theme}) => theme?.dimensions?.footerHeight} - 4rem
   );
 `;
 
