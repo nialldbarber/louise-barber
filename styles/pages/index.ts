@@ -23,7 +23,7 @@ const ImageGrid = styled.div`
     position: relative;
     display: block;
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     will-change: transform;
     overflow: hidden;
     transition: transform 0.5s;
