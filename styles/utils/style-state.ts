@@ -10,7 +10,7 @@ export const lightTheme = {
   },
   dimensions: {
     maxWidth: '1200px',
-    headerHeight: '80px',
+    headerHeight: '83px',
     footerHeight: '50px',
   },
   animation: {

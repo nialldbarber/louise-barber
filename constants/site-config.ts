@@ -12,7 +12,7 @@ export const navItems: Array<Items> = [
 export const ART_PAGE: string = '/art/';
 
 export enum TITLE {
-  MAIN = 'louise hannah barber',
+  MAIN = 'LOUISE H BARBER',
   FOOTER = '© lhb',
   DESC = 'Art by Louise Barber',
 }

@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     ${noMarginOrPaddingMixin};
     font-family: ${({theme}) => theme?.font?.main};
     font-size: 16px;
+    font-weight: bold;
     line-height: 1.15;
     color: ${({theme}) => theme?.colors?.black};
     background: ${({theme}) => theme?.colors?.white};

@@ -38,6 +38,7 @@ const Btn = styled.button`
     position: absolute;
     top: 3.1rem;
     right: 2rem;
+    padding: 0;
     background: none;
     z-index: 12;
   }

@@ -19,6 +19,8 @@ const FooterContainer = styled.footer`
 
   p {
     margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
   }
 `;
 
@@ -26,6 +28,7 @@ const InstaIcon = styled.div`
   width: 20px;
   height: 20px;
   margin-left: 0.5rem;
+  margin-bottom: 0.2rem;
 `;
 
 export {FooterContainer, InstaIcon};

@@ -23,7 +23,7 @@ const ImageGrid = styled.div`
     position: relative;
     display: block;
     overflow: hidden;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     will-change: transform;
     overflow: hidden;
     transition: transform 0.5s;
@@ -45,6 +45,8 @@ const ImageGrid = styled.div`
         left: 50%;
         transform: translateX(-50%);
         transition: 0.25s ${({theme}) => theme?.animation?.swoop};
+        font-size: 1.5rem;
+        font-weight: bold;
       }
     }
 

@@ -6,7 +6,7 @@ import Button from 'components/button';
 const Path: FC = (props) => (
   <motion.path
     fill="transparent"
-    strokeWidth="3"
+    strokeWidth="2"
     stroke="hsl(0, 0%, 18%)"
     strokeLinecap="round"
     {...props}
