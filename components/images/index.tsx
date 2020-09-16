@@ -1,4 +1,4 @@
-import React, {FC, CSSProperties, MouseEvent} from 'react';
+import React, {FC, CSSProperties} from 'react';
 import Link from 'next/link';
 import useStore from 'state/store';
 import SingleImage from 'components/images/single-image';
@@ -8,21 +8,16 @@ export interface ImageGridProps {
   id?: string;
   url?: string;
   title: string;
-  action?: () => void;
   style?: CSSProperties;
 }
 
-const Images: FC<ImageGridProps> = ({id, url, title, action}) => {
+const Images: FC<ImageGridProps> = ({id, url, title}) => {
   const {showHoveredCursor, hideHoveredCursor} = useStore();
 
   return id && url ? (
     <Link href={`${ART_PAGE}[id]`} as={`${ART_PAGE}${id}`}>
       <a
-        onClick={(e: MouseEvent) => {
-          e.preventDefault();
-          hideHoveredCursor();
-          action(id);
-        }}
+        onClick={hideHoveredCursor}
         onMouseEnter={showHoveredCursor}
         onMouseLeave={hideHoveredCursor}
       >
