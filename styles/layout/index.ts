@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
-import {flexCenterMixin} from 'styles/mixins';
+import {flexCenterMixin} from 'styles/utils/mixins';
+import {media} from 'styles/utils/media-queries';
 
 const PageLayout = styled(motion.section)`
   margin: 0 auto;
@@ -20,6 +21,9 @@ const ImageContainer = styled.div`
   ${flexCenterMixin};
   margin: 0 auto;
   max-width: 70%;
+  ${media.lessThan('tablet')`
+    max-width: 100%;
+  `};
 `;
 
 export {PageLayout, Main, ImageContainer};

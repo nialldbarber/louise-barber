@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import {motion} from 'framer-motion';
-import {fullSpacedMixin} from 'styles/mixins';
+import {fullSpacedMixin} from 'styles/utils/mixins';
 
 const MainNav = styled(motion.nav)`
   button {

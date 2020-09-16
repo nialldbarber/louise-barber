@@ -18,8 +18,6 @@ const MainLayout: FC<MainLayoutProps> = ({title, children}) => {
   const {x, y} = useMousePosition();
   const {isMobile} = useDetectDevice();
 
-  console.log(isMobile);
-
   return (
     <>
       <Header />

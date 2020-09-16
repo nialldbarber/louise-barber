@@ -8,13 +8,19 @@ export interface ImageGridProps {
   id?: string;
   url?: string;
   title: string;
+  action?: () => void;
   style?: CSSProperties;
 }
 
-const Images: FC<ImageGridProps> = ({id, url, title}) => {
+const Images: FC<ImageGridProps> = ({id, url, title, action}) => {
   return id && url ? (
     <Link href={`${ART_PAGE}[id]`} as={`${ART_PAGE}${id}`}>
-      <a>
+      <a
+        onClick={(e) => {
+          e.preventDefault();
+          action(id);
+        }}
+      >
         <CursorLink>
           <>
             {<SingleImage img={url} title={title} /> ?? null}

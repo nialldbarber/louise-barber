@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {flexCenterMixin} from 'styles/mixins';
+import {flexCenterMixin} from 'styles/utils/mixins';
 
 const FooterContainer = styled.footer`
   position: relative;

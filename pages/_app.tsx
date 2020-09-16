@@ -2,8 +2,8 @@ import React, {FC} from 'react';
 import type {AppProps} from 'next/app';
 import {ThemeProvider} from 'styled-components';
 import {AnimatePresence} from 'framer-motion';
-import {GlobalStyle} from 'styles/global';
-import {lightTheme} from 'styles/style-state';
+import {GlobalStyle} from 'styles/utils/global';
+import {lightTheme} from 'styles/utils/style-state';
 
 const App: FC<AppProps> = ({Component, pageProps}) => {
   return (

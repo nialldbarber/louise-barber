@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {fullSpacedMixin} from 'styles/mixins';
+import {fullSpacedMixin} from 'styles/utils/mixins';
 
 const masonrySpace = 30;
 

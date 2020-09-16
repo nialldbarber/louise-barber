@@ -1,6 +1,6 @@
 export const lightTheme = {
   font: {
-    main: "'Ubuntu', sans-serif",
+    main: 'ModernSans-Light, sans-serif',
   },
   colors: {
     black: '#111',

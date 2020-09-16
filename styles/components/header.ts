@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import {flexCenterMixin, fullSpacedMixin, positionCenter} from 'styles/mixins';
+import {
+  flexCenterMixin,
+  fullSpacedMixin,
+  positionCenter,
+} from 'styles/utils/mixins';
 
 const HeaderContainer = styled.header`
   ${flexCenterMixin};

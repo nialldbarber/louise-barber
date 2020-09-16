@@ -1,7 +1,15 @@
 import {createGlobalStyle} from 'styled-components';
-import {noBorderMixin, noMarginOrPaddingMixin} from 'styles/mixins';
+import {noBorderMixin, noMarginOrPaddingMixin} from 'styles/utils/mixins';
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {	
+    font-family: 'ModernSans-Light';
+    src: url('/fonts/ModernSans-Light.otf');
+    font-weight: 500;
+    font-display: auto;
+    font-style: normal;
+  }  
+
   * {
     box-sizing: border-box;
     text-rendering: optimizeLegibility;

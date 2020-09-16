@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {titleClamp} from 'styles/mixins';
+import {titleClamp} from 'styles/utils/mixins';
 
 const MainHeader = styled.h1`
   margin: 0;

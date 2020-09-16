@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {lighten} from 'polished';
-import {flexCenterMixin} from 'styles/mixins';
+import {flexCenterMixin} from 'styles/utils/mixins';
 
 const Btn = styled.button`
   &.standard {

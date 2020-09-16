@@ -1,5 +1,5 @@
 import {DefaultTheme} from 'styled-components';
-import {lightTheme, darkTheme} from 'styles/style-state';
+import {lightTheme, darkTheme} from 'styles/utils/style-state';
 import {LIGHT_MODE} from 'constants/theme';
 
 function getThemeMode(theme: string): DefaultTheme {

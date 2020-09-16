@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {positionCenter, marign404} from 'styles/mixins';
+import {positionCenter, marign404} from 'styles/utils/mixins';
 
 const Layout404 = styled.div`
   display: grid;
