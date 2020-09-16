@@ -10,25 +10,43 @@ import {MAIN_IMAGES} from 'constants/api';
 import {Entries} from 'types/pages/index';
 
 const Home: NextPage<Entries> = (entries) => {
-  const {selectedImageId, showSelectedId} = useStore();
+  const {
+    selectedImageId,
+    setSelectedId,
+    showAllImages,
+    setShowAllImages,
+  } = useStore();
 
   function showId(id: string) {
-    console.log(id);
-    showSelectedId(id);
+    setSelectedId(entries.items.find((img) => img.sys.id === id));
+    setShowAllImages(false);
   }
 
-  // console.log(entries.items.find());
+  // console.log(selectedImageId && selectedImageId);
+  console.log('Show all images?: ', showAllImages);
+
+  // click outside div && click title
+  // should make selectedImageId === ''
 
   return (
     <>
       <MainLayout title="Home">
+        <button onClick={() => setShowAllImages(true)}>REVERT!</button>
         <ImageGrid>
           <Masonry
             breakpointCols={breakpointColumnsObj}
             className="masonry-grid"
             columnClassName="masonry-grid-column"
           >
-            {entries.items[selectedImageId] ??
+            {selectedImageId !== '' && showAllImages === false ? (
+              <Images
+                key={selectedImageId?.sys?.id}
+                id={selectedImageId?.sys?.id}
+                url={selectedImageId?.fields?.mainImage[1]?.fields?.file?.url}
+                title={selectedImageId?.fields?.mainImage[0]?.fields?.title}
+                action={showId}
+              />
+            ) : (
               entries.items.map((image) => {
                 const id = image?.sys?.id;
                 const url = getProgressiveImage(
@@ -44,7 +62,8 @@ const Home: NextPage<Entries> = (entries) => {
                     action={showId}
                   />
                 ) : null;
-              })}
+              })
+            )}
           </Masonry>
         </ImageGrid>
       </MainLayout>

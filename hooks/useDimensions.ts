@@ -5,7 +5,7 @@ interface Dimensions {
   height: number | null;
 }
 
-interface Ref {
+export interface Ref {
   current: HTMLElement;
 }
 

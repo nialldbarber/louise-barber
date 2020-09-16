@@ -4,11 +4,13 @@ type State = {
   isHovered: boolean;
   isMenuOpen: boolean;
   selectedImageId: string;
+  showAllImages: boolean;
   showHoveredCursor: () => void;
   hideHoveredCursor: () => void;
   toggleMenu: () => void;
   closeMenu: () => void;
-  showSelectedId: (id: string) => void;
+  setSelectedId: (id: string) => void;
+  setShowAllImages: (cond: boolean) => void;
 };
 
 const useStore = create<State>((set) => ({
@@ -22,7 +24,9 @@ const useStore = create<State>((set) => ({
   closeMenu: () => set(() => ({isMenuOpen: false})),
   // Selected image
   selectedImageId: '',
-  showSelectedId: (id: string) => set(() => ({selectedImageId: id})),
+  showAllImages: true,
+  setSelectedId: (id) => set(() => ({selectedImageId: id})),
+  setShowAllImages: (cond) => set(() => ({showAllImages: cond})),
 }));
 
 export default useStore;
